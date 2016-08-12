@@ -88,7 +88,7 @@ Gets the schema of a given organization.
 | providers                  | array                | List of cloud providers the organization can enable to register and deploy. Each provider type has the following properties:                                                            |
 |                            |                      |  * enabled: Boolean value of true if enabled, else false.                                                                                                                               |
 |                            |                      |  * type: String values of the supported cloud providers: Amazon Web Services, Openstack, VMWare vSphere, Google Compute, Microsoft Azure, Cloudstack, SoftLayer, VMware vCloud Director,|
-|                            |                      |    Amazon Web Services GovCloud, HP Cloud, Rackspace.                                                                                                                                   |
+|                            |                      |    Amazon Web Services GovCloud, Rackspace.                                                                                                                                   |
 |                            |                      |  * description: String that briefly enumerates the services from the cloud provider.                                                                                                    |
 |                            |                      |  * pricing: Array of pricing information for Linux and Windows compute instance types. Only available for Amazon Web Services.                                                          |
 +----------------------------+----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -279,14 +279,6 @@ Gets the schema of a given organization.
 	         "enabled":true,
 	         "type":"Amazon Web Services GovCloud",
 	         "description":"Manage compute services in an isolated ITAR compliant AWS region.",
-	         "pricing":[
-
-	         ]
-	      },
-	      {
-	         "enabled":true,
-	         "type":"HP Cloud",
-	         "description":"Manage cloud hosting, Linux and Windows machines.",
 	         "pricing":[
 
 	         ]
@@ -538,14 +530,6 @@ Updates an existing organization given its name. Only the organization administr
 	      },
 	      {
 	         "enabled":true,
-	         "type":"HP Cloud",
-	         "description":"Manage cloud hosting, Linux and Windows machines.",
-	         "pricing":[
-
-	         ]
-	      },
-	      {
-	         "enabled":true,
 	         "type":"Rackspace",
 	         "description":"Manage cloud hosting and Linux machines.",
 	         "pricing":[
@@ -666,7 +650,7 @@ Updates an existing organization given its name. Only the organization administr
 | providers                  | array                | List of cloud providers the organization can enable to register and deploy. Each provider type has the following properties:                                                            |
 |                            |                      |  * enabled: Boolean value of true if enabled, else false.                                                                                                                               |
 |                            |                      |  * type: String values of the supported cloud providers: Amazon Web Services, Openstack, VMWare vSphere, Google Compute, Microsoft Azure, Cloudstack, SoftLayer, VMware vCloud Director,|
-|                            |                      |    Amazon Web Services GovCloud, HP Cloud, Rackspace.                                                                                                                                   |
+|                            |                      |    Amazon Web Services GovCloud, Rackspace.                                                                                                                                   |
 |                            |                      |  * description: String that briefly enumerates the services from the cloud provider.                                                                                                    |
 |                            |                      |  * pricing: Array of pricing information for Linux and Windows compute instance types. Only available for Amazon Web Services.                                                          |
 +----------------------------+----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -758,7 +742,7 @@ Updates an existing organization given its name. Only the organization administr
 | providers                  | array                | List of cloud providers the organization can enable to register and deploy. Each provider type has the following properties:                                                            |
 |                            |                      |  * enabled: Boolean value of true if enabled, else false.                                                                                                                               |
 |                            |                      |  * type: String values of the supported cloud providers: Amazon Web Services, Openstack, VMWare vSphere, Google Compute, Microsoft Azure, Cloudstack, SoftLayer, VMware vCloud Director,|
-|                            |                      |    Amazon Web Services GovCloud, HP Cloud, Rackspace.                                                                                                                                   |
+|                            |                      |    Amazon Web Services GovCloud, Rackspace.                                                                                                                                   |
 |                            |                      |  * description: String that briefly enumerates the services from the cloud provider.                                                                                                    |
 |                            |                      |  * pricing: Array of pricing information for Linux and Windows compute instance types. Only available for Amazon Web Services.                                                          |
 +----------------------------+----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -955,14 +939,6 @@ Updates an existing organization given its name. Only the organization administr
 	      },
 	      {
 	         "enabled":true,
-	         "type":"HP Cloud",
-	         "description":"Manage cloud hosting, Linux and Windows machines.",
-	         "pricing":[
-
-	         ]
-	      },
-	      {
-	         "enabled":true,
 	         "type":"Rackspace",
 	         "description":"Manage cloud hosting and Linux machines.",
 	         "pricing":[
@@ -1106,7 +1082,7 @@ Queues a request to sync LDAP groups. The sync request, depending on the amount 
 | providers                  | array                | List of cloud providers the organization can enable to register and deploy. Each provider type has the following properties:                                                            |
 |                            |                      |  * enabled: Boolean value of true if enabled, else false.                                                                                                                               |
 |                            |                      |  * type: String values of the supported cloud providers: Amazon Web Services, Openstack, VMWare vSphere, Google Compute, Microsoft Azure, Cloudstack, SoftLayer, VMware vCloud Director,|
-|                            |                      |    Amazon Web Services GovCloud, HP Cloud, Rackspace.                                                                                                                                   |
+|                            |                      |    Amazon Web Services GovCloud, Rackspace.                                                                                                                                   |
 |                            |                      |  * description: String that briefly enumerates the services from the cloud provider.                                                                                                    |
 |                            |                      |  * pricing: Array of pricing information for Linux and Windows compute instance types. Only available for Amazon Web Services.                                                          |
 +----------------------------+----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1246,14 +1222,6 @@ Queues a request to sync LDAP groups. The sync request, depending on the amount 
 	         "enabled":true,
 	         "type":"Amazon Web Services GovCloud",
 	         "description":"Manage compute services in an isolated ITAR compliant AWS region.",
-	         "pricing":[
-
-	         ]
-	      },
-	      {
-	         "enabled":true,
-	         "type":"HP Cloud",
-	         "description":"Manage cloud hosting, Linux and Windows machines.",
 	         "pricing":[
 
 	         ]

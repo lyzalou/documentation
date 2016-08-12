@@ -879,7 +879,6 @@ Organization
                                       "Amazon Web Services GovCloud",
                                       "Cloudstack",
                                       "Google Compute",
-                                      "HP Cloud",
                                       "Microsoft Azure",
                                       "Rackspace",
                                       "SoftLayer",
