@@ -36,8 +36,6 @@ Click **Edit** to customize the policy. Select the resource, network, and other 
 
 * `Rackspace Cloud </../documentation/deploying-and-managing-instances/using-rackspacecloud/#rackspace-deploy>`_
 
-* `HP Cloud </../documentation/deploying-and-managing-instances/using-hpcloud/#hpcloud-deploy>`_
-
 * `CloudStack </../documentation/deploying-and-managing-instances/using-cloudstack/#cloudstack-deploy-eb>`_
 
 * `SoftLayer </../documentation/deploying-and-managing-instances/using-softlayer/#softlayer-deploy>`_

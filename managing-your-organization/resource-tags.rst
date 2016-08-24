@@ -19,7 +19,6 @@ In the admin console, you can add tags under Providers > Tags.
 	* `AWS`_
 	* `Google Cloud`_
 	* `OpenStack`_
-	* `HP Cloud`_
 	* `vSphere`_
 	* `CloudStack`_
 
@@ -139,21 +138,6 @@ OpenStack
 
 		<div class="doc-image padding-1x">
 			<img class="img-responsive" src="/../assets/img/docs/adminconsole/tags-viewon-openstack.png" alt="Managing Tags in OpenStack">
-		</div>
-
-HP Cloud
-``````````
-
-**Steps**
-
-1. Log in to the `HP Helion Cloud console <https://horizon.hpcloud.com/>`_.
-2. Select the project and region to which ElasticBox instances are deployed.
-3. Under **Instances**, select the instance whose tags you want to view. The tags are listed under Meta.
-
-	.. raw:: html
-
-		<div class="doc-image padding-1x">
-			<img class="img-responsive" src="/../assets/img/docs/adminconsole/tags-viewin-hpcloud.png" alt="Managing Tags in HP Cloud">
 		</div>
 
 vSphere

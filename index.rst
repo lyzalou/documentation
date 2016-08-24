@@ -55,7 +55,6 @@ Contents:
       vCloud Air & vCloud Director <deploying-and-managing-instances/vcloudair-director.rst>
       OpenStack Cloud <deploying-and-managing-instances/using-the-openstack-cloud.rst>
       Rackspace Cloud <deploying-and-managing-instances/using-rackspacecloud.rst>
-      HP Cloud <deploying-and-managing-instances/using-hpcloud.rst>
       CloudStack <deploying-and-managing-instances/using-cloudstack.rst>
       Azure <deploying-and-managing-instances/using-azure.rst>
       SoftLayer <deploying-and-managing-instances/using-softlayer.rst>

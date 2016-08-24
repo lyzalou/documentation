@@ -358,39 +358,6 @@ To add an Azure subscription in ElasticBox, you first have to upload the Elastic
 	}
 	</pre>
 
-**HP Cloud**
-
-+----------------------------+----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Parameter                  | Type                 | Description                                                                                                                                                                             |
-+============================+======================+=========================================================================================================================================================================================+
-| username                   | string               | Required. Specify a SoftLayer account username.                                                                                                                                         |
-+----------------------------+----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| password                   | string               | Required. Specify the password for the HPCloud user.                                                                                                                                    |
-+----------------------------+----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| project                    | string               | Required. Specify the project for the HPCloud user.                                                                                                                                     |
-+----------------------------+----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| url                        | string               | Required. Specify the url for the HPCloud service.                                                                                                                                      |
-+----------------------------+----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-**HP Cloud request body**
-
-.. raw:: html
-
-	<pre>
-	{
-	  "icon": "images/platform/hpcloud.png",
-	  "type": "HP Cloud",
-	  "description": "Manage cloud hosting, Linux and Windows machines",
-	  "schema": "http://elasticbox.net/schemas/openstack/provider",
-	  "identity_url": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0",
-	  "name": "HPCloudProvider",
-	  "password": "_the_password",
-	  "project": "_the_project",
-	  "username": "_the_username",
-	  "owner": "operations"
-	}
-	</pre>
-
 **Response parameters for all providers**
 
 +----------------------------+----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -770,50 +737,6 @@ To add an Azure subscription in ElasticBox, you first have to upload the Elastic
 	}
 	</pre>
 
-**HPCLoud response parameters**
-
-+----------------------------+----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Parameter                  | Type                 | Description                                                                                                                                                                             |
-+============================+======================+=========================================================================================================================================================================================+
-| username                   | string               | Returns the HPCloudr username the provider account uses.                                                                                                                                |
-+----------------------------+----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| password                   | string               | Returns the password for the HPCloud user.                                                                                                                                              |
-+----------------------------+----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-**HPCLoud response example**
-
-.. raw:: html
-
-	<pre>
-	{
-	  "username": "_the_username",
-	  "updated": "2015-10-30 12:31:36.892384",
-	  "password": "_the_password",
-	  "description": "Manage cloud hosting, Linux and Windows machines",
-	  "created": "2015-10-30 12:31:36.892384",
-	  "deleted": null,
-	  "type": "HP Cloud",
-	  "uri": "/services/providers/a0382e67-e5bb-45ad-bac3-945c89be66d2",
-	  "name": "HPCloudProvider",
-	  "project": "alberto@elasticbox.com-default-tenant",
-	  "services": [
-
-	  ],
-	  "state": "initializing",
-	  "admin_boxes": [
-
-	  ],
-	  "members": [
-
-	  ],
-	  "owner": "operations",
-	  "organization": "elasticbox",
-	  "icon": "images/platform/hpcloud.png",
-	  "identity_url": "https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0",
-	  "id": "a0382e67-e5bb-45ad-bac3-945c89be66d2",
-	  "schema": "http://elasticbox.net/schemas/openstack/provider"
-	}
-	</pre>
 
 GET /services/providers
 ------------------------------
@@ -863,7 +786,7 @@ Gets available providers from the personal workspace of the authenticated user.
 +----------------------------+----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | owner                      | string               | Provider owner.                                                                                                                                                                         |
 +----------------------------+----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| type                       | string               | Provider type, there are the available providers: Amazon Web Services (AWS), VShpere, VCloud, RackSpace, Openstack, Google Compute, Azure, CloudStack, Softlayer, HP Cloud, AWS Gov.    |
+| type                       | string               | Provider type, there are the available providers: Amazon Web Services (AWS), VShpere, VCloud, RackSpace, Openstack, Google Compute, Azure, CloudStack, Softlayer, AWS Gov.    |
 +----------------------------+----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | id                         | string               | Provider unique identificator.                                                                                                                                                          |
 +----------------------------+----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1011,29 +934,6 @@ Gets available providers from the personal workspace of the authenticated user.
 	        "type": "Dimension Data",
 	        "id": "052211ae-096a-44e7-b88c-27d8dcac3971",
 	        "icon": "images/platform/dimension-data.png"
-	    },
-	    {
-	        "updated": "2015-10-30 12:32:02.158969",
-	        "description": "Manage cloud hosting, Linux and Windows machines",
-	        "icon": "images/platform/hpcloud.png",
-	        "created": "2015-10-30 12:31:36.892384",
-	        "uri": "/services/providers/a0382e67-e5bb-45ad-bac3-945c89be66d2",
-	        "name": "HPCloudProvider",
-	        "services": [
-	            {
-	                "locations": [
-	                    {},
-	                    {}
-	                ],
-	                "name": "Linux Compute"
-	            }
-	        ],
-	        "state": "ready",
-	        "members": [],
-	        "owner": "operations",
-	        "type": "HP Cloud",
-	        "id": "a0382e67-e5bb-45ad-bac3-945c89be66d2",
-	        "schema": "http://elasticbox.net/schemas/openstack/provider"
 	    },
 	    {
 	        "schema": "http://elasticbox.net/schemas/gce/provider",
@@ -1428,7 +1328,7 @@ Fetches an existing provider when you give the provider ID.
 +----------------------------+----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | owner                      | string               | Provider owner.                                                                                                                                                                         |
 +----------------------------+----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| type                       | string               | Provider type, there are the available providers: Amazon Web Services (AWS), VShpere, VCloud, RackSpace, Openstack, Google Compute, Azure, CloudStack, Softlayer, HP Cloud, AWS Gov.    |
+| type                       | string               | Provider type, there are the available providers: Amazon Web Services (AWS), VShpere, VCloud, RackSpace, Openstack, Google Compute, Azure, CloudStack, Softlayer, AWS Gov.    |
 +----------------------------+----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | id                         | string               | Provider unique identificator.                                                                                                                                                          |
 +----------------------------+----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
