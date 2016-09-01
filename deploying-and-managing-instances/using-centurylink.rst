@@ -22,7 +22,7 @@ You need a `CenturyLink Cloud account <https://www.ctl.io>`_ to be able to deplo
     .. raw:: html
 
         <div class="doc-image padding-1x">
-            <img class="img-responsive" src="/../assets/img/docs/providers/CenturyLink Cloud-entercredentials.png" alt="Enter CenturyLink Cloud Credentials">
+            <img class="img-responsive" src="/../assets/img/docs/providers/centurylink-add-provider-credentials.png" alt="Enter CenturyLink Cloud Credentials">
         </div>
 
 Deploy to CenturyLink Cloud from ElasticBox
