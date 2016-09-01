@@ -1,5 +1,5 @@
 Using AWS GovCloud
-********************************
+******************
 
 AWS GovCloud is an isolated region designed to handle workloads of sensitive data. Why spin up machines and SSH into them to run workloads manually, when you can automate and deploy faster using `ElasticBox </../documentation/getting-started/what-does-elasticbox-do/>`_?
 
@@ -14,7 +14,7 @@ AWS GovCloud is available only by request. Contact `support`_ to enable it for y
 * `Deploy to AWS GovCloud from ElasticBox`_
 
 Connect to AWS GovCloud from ElasticBox
-------------------------------------------
+---------------------------------------
 
 Access to AWS GovCloud requires a `special signup process <http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/getting-set-up.html>`_. When you have a GovCloud account, connect to it in ElasticBox with a role based ARN following the same steps as you would for a regular AWS account.
 
@@ -29,7 +29,7 @@ Enter the following 3rd party IAM information for ElasticBox:
 `Step 2. Share the role's Amazon Resource Name (ARN) in ElasticBox. </../documentation/deploying-and-managing-instances/using-your-aws-account/#awsshare-roleARN>`_.
 
 Deploy to AWS GovCloud from ElasticBox
-------------------------------------------
+--------------------------------------
 
 Select the box where you configured a workload to run remotely and choose AWS deployment settings to launch in a VM or service in the GovCloud region.
 

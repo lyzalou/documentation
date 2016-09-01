@@ -1,5 +1,5 @@
 Using Azure
-********************************
+***********
 
 Microsoft Azure hosts applications in virtual machines and in cloud services via Web, Worker roles. ElasticBox supports deploying to all three models through the `Virtual Machine Role`_, `Web and Worker roles`_. In addition, we support `Microsoft SQL Database Service`_ through Azure. Take a look at the `benefits of deploying to Azure using ElasticBox`_.
 
@@ -15,7 +15,7 @@ To learn about Azure hosting services, see the `Azure help <http://azure.microso
 * `Deploying in Azure`_
 
 Before You Begin
----------------------------------------
+----------------
 
 You need an Azure subscription to be able to consume Azure services. Follow these steps to create one.
 
@@ -25,18 +25,18 @@ You need an Azure subscription to be able to consume Azure services. Follow thes
 
 2. Click add subscription.
 
-	.. raw:: html
+    .. raw:: html
 
-		<div class="doc-image padding-1x">
-	    	<img class="img-responsive" src="/../assets/img/docs/providers/azure-add-new-subscription.png" alt="Add a New Azure Subscription">
-		</div>
+        <div class="doc-image padding-1x">
+            <img class="img-responsive" src="/../assets/img/docs/providers/azure-add-new-subscription.png" alt="Add a New Azure Subscription">
+        </div>
 
 3. You can use the free trial version or select and purchase a payment plan.
 
-	**Note**: ElasticBox is not responsible for any costs incurred through deploying to Azure. For more information, see `Azure pricing <http://azure.microsoft.com/en-us/pricing/calculator/?scenario=virtual-machines>`_.
+    **Note**: ElasticBox is not responsible for any costs incurred through deploying to Azure. For more information, see `Azure pricing <http://azure.microsoft.com/en-us/pricing/calculator/?scenario=virtual-machines>`_.
 
 Benefits of Deploying to Azure Using ElasticBox
-----------------------------------------------------
+-----------------------------------------------
 
 ElasticBox simplifies Azure deployments with these benefits:
 
@@ -44,14 +44,14 @@ ElasticBox simplifies Azure deployments with these benefits:
 
 * **Deploy easily to web and worker roles**: Typically to deploy in Azure, you have to install and set up the latest Visual Studio development environment, then install Azure SDK tools and extensions including the emulator. After that you must either directly upload your application files through Azure Blob storage or manually create a package (cspkg). But by deploying a web or worker role through ElasticBox, you can skip this fairly involved process.
 
-	See how easy it is to get a web or worker role started in ElasticBox: Build a box, upload your application code and configuration files, select Azure deployment options, and deploy. We automatically create a cloud service and storage account for your web or worker role deployments.
+    See how easy it is to get a web or worker role started in ElasticBox: Build a box, upload your application code and configuration files, select Azure deployment options, and deploy. We automatically create a cloud service and storage account for your web or worker role deployments.
 
 * **Switch between VM, web, and worker roles**: It's easy to migrate from virtual machine to web or worker role deployments or vice versa because your configuration is encapsulated in boxes. Simply kill the VM machines and deploy your box into web or worker roles or the other way around.
 
 * **Focus on applications**: Once your machines are deployed in Azure through ElasticBox, you can focus on your application and easily handle the entire lifecycle of application instances. We do all the backend API operations to manage your instances. For example, when you delete an instance that you no longer need, we automatically delete the availability set, virtual machine instances, storage account and cloud service, associated with the instance.dsfsdsd
 
 Registering Your Azure Subscription in ElasticBox
-------------------------------------------------------
+-------------------------------------------------
 
 To connect to Azure in ElasticBox, you need to upload the elasticbox.cer to your Azure subscription and then provide ElasticBox your subscription ID. Follow these steps.
 
@@ -61,57 +61,57 @@ To connect to Azure in ElasticBox, you need to upload the elasticbox.cer to your
 2. Click **Providers** > **New Provider**.
 3. In the dialog, select **Microsoft Azure**.
 
-	.. raw:: html
+    .. raw:: html
 
-		<div class="doc-image padding-1x">
-      		<img class="img-responsive" src="/../assets/img/docs/providers/azure-add-provider.png" alt="Select Microsoft Azure">
-		</div>
+        <div class="doc-image padding-1x">
+            <img class="img-responsive" src="/../assets/img/docs/providers/azure-add-provider.png" alt="Select Microsoft Azure">
+        </div>
 
 4. Enter your Azure subscription credentials as shown.
 
-	* Enter a useful name to identify the Azure subscription in ElasticBox.
-	* Under Credentials, click **Download**. The elasticbox.cer certificate is saved to your local machine. Upload the certificate to your Azure portal. This allows ElasticBox to manage your subscription based on resources you deploy.
-		1. Sign in to the `Azure Portal <https://manage.windowsazure.com>`_.
-		2. Click Settings > Management Certificates > UPLOAD A MANAGEMENT CERTIFICATE.
+    * Enter a useful name to identify the Azure subscription in ElasticBox.
+    * Under Credentials, click **Download**. The elasticbox.cer certificate is saved to your local machine. Upload the certificate to your Azure portal. This allows ElasticBox to manage your subscription based on resources you deploy.
+        1. Sign in to the `Azure Portal <https://manage.windowsazure.com>`_.
+        2. Click Settings > Management Certificates > UPLOAD A MANAGEMENT CERTIFICATE.
 
-			.. raw:: html
+            .. raw:: html
 
-				<div class="doc-image padding-1x">
-      				<img class="img-responsive" src="/../assets/img/docs/providers/azure-upload-elasticbox-certificate.png" alt="Click the Option to Upload a Certificate">
-				</div>
+                <div class="doc-image padding-1x">
+                    <img class="img-responsive" src="/../assets/img/docs/providers/azure-upload-elasticbox-certificate.png" alt="Click the Option to Upload a Certificate">
+                </div>
 
-		3. Under FILE > click BROWSE FOR FILE to select the certificate from your local machine.
-		4. Under Subscription, be sure to select your subscription.
+        3. Under FILE > click BROWSE FOR FILE to select the certificate from your local machine.
+        4. Under Subscription, be sure to select your subscription.
 
-			.. raw:: html
+            .. raw:: html
 
-				<div class="doc-image padding-1x">
-      				<img class="img-responsive" src="/../assets/img/docs/providers/azure-upload-eb-certificate.png" alt="Upload the ElasticBox Certificate to Azure">
-				</div>
+                <div class="doc-image padding-1x">
+                    <img class="img-responsive" src="/../assets/img/docs/providers/azure-upload-eb-certificate.png" alt="Upload the ElasticBox Certificate to Azure">
+                </div>
 
-		5. Click the checkmark to save.
+        5. Click the checkmark to save.
 
-	* Copy your Azure subscription ID located under Settings in the Azure Management Portal.
+    * Copy your Azure subscription ID located under Settings in the Azure Management Portal.
 
-		.. raw:: html
+        .. raw:: html
 
-			<div class="doc-image padding-1x">
-      			<img class="img-responsive" src="/../assets/img/docs/providers/azure-select-subscriptionid.png" alt="Copy Your Azure Subscription ID">
-			</div>
+            <div class="doc-image padding-1x">
+                  <img class="img-responsive" src="/../assets/img/docs/providers/azure-select-subscriptionid.png" alt="Copy Your Azure Subscription ID">
+            </div>
 
-	* In ElasticBox, under Credentials, paste in the subscription ID.
+    * In ElasticBox, under Credentials, paste in the subscription ID.
 
-		.. raw:: html
+        .. raw:: html
 
-			<div class="doc-image padding-1x">
-      			<img class="img-responsive" src="/../assets/img/docs/providers/azure-paste-subscriptionid-inelasticbox.png" alt="Paste in the Azure Subscription in ElasticBox">
-			</div>
+            <div class="doc-image padding-1x">
+                  <img class="img-responsive" src="/../assets/img/docs/providers/azure-paste-subscriptionid-inelasticbox.png" alt="Paste in the Azure Subscription in ElasticBox">
+            </div>
 
 
 5. Click **Save**.
 
 Deploying in Azure
--------------------------------------
+------------------
 
 You can deploy to the following services in Azure:
 
@@ -124,7 +124,7 @@ Although all the services are available to Windows based applications, Azure sup
 When you’re all set to `launch a new instance </../documentation/deploying-and-managing-instances/deploying-managing-instances/#new-instance>`_ in Azure, ElasticBox presents deployment profile options for the roles or for the database service.
 
 Web and Worker Roles
-------------------------
+--------------------
 
 Web and worker roles act as the front-end and backend environments to host your multi-tier applications like a web application running on IIS and .NET framework. Although you can run instances in each role independent of the other, you may want to combine them to host complex multi-tier applications.
 
@@ -144,12 +144,12 @@ In case of multi-tier applications deployed to different roles, follow these tip
 
 .. raw:: html
 
-	<div class="doc-image padding-1x">
-    	<img class="img-responsive" src="/../assets/img/docs/providers/azure-webworkerroles-depprofile.png" alt="Choose Deployment Settings for Web or Worker Roles">
-	</div>
+    <div class="doc-image padding-1x">
+        <img class="img-responsive" src="/../assets/img/docs/providers/azure-webworkerroles-depprofile.png" alt="Choose Deployment Settings for Web or Worker Roles">
+    </div>
 
 Azure Web and Worker Role Deployment Options
-````````````````````````````````````````````````
+````````````````````````````````````````````
 
 **Deployment**
 
@@ -210,9 +210,9 @@ To autoscale Web or Worker roles, configure these settings in the Azure deployme
 
 .. raw:: html
 
-	<div class="doc-image padding-1x">
-    	<img class="img-responsive" src="/../assets/img/docs/providers/azure-webworkerrole-autoscale-instances.png" alt="Autoscaling Windows Web or Worker Role Instances in Azure">
-	</div>
+    <div class="doc-image padding-1x">
+        <img class="img-responsive" src="/../assets/img/docs/providers/azure-webworkerrole-autoscale-instances.png" alt="Autoscaling Windows Web or Worker Role Instances in Azure">
+    </div>
 
 * Select a machine size for the role that has the sufficient number of cores to support scaling.
 * Set the number of instances to at least two to meet high availability SLAs from Azure. Here, you can control autoscaling by setting the maximum number of instances to scale.
@@ -221,7 +221,7 @@ To autoscale Web or Worker roles, configure these settings in the Azure deployme
 For more information, see the `Azure help <http://msdn.microsoft.com/en-us/library/hh680945(v=pandp.50).aspx>`_.
 
 Virtual Machine Role
---------------------------
+--------------------
 
 The virtual machine role lets you build and manage highly customizable and flexible OS environments. For more information, see the `Azure help <http://msdn.microsoft.com/library/azure/jj156003.aspx>`_.
 
@@ -229,12 +229,12 @@ To deploy in ElasticBox, simply select your box based on Linux or Windows, and `
 
 .. raw:: html
 
-	<div class="doc-image padding-1x">
-    	<img class="img-responsive" src="/../assets/img/docs/providers/azure-vm-deploymentoptions.png" alt="Linux and Windows Deployment Options for Azure Virtual Machines in ElasticBox">
-	</div>
+    <div class="doc-image padding-1x">
+        <img class="img-responsive" src="/../assets/img/docs/providers/azure-vm-deploymentoptions.png" alt="Linux and Windows Deployment Options for Azure Virtual Machines in ElasticBox">
+    </div>
 
 Azure Deployment Options
-``````````````````````````````
+````````````````````````
 
 **Deployment**
 
@@ -303,7 +303,7 @@ Azure Deployment Options
 |                     |                    | * **Affinity Groups**. Select an affinity group, if you created one to keep the instance close to other regional resources in the datacenter.                                                                                                                              |
 +---------------------+--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Availability Set    | Both               | Select Automatic to let Azure create an availability set for fault tolerance. This protects the virtual machine against single points of failure in the same cloud service and region.                                                                                     |
-|                     |                    | For more information, see `Manage the Availability of Virtual Machines <http://azure.microsoft.com/en-us/documentation/articles/manage-availability-virtual-machines/>`_.                                                                                                  | 
+|                     |                    | For more information, see `Manage the Availability of Virtual Machines <http://azure.microsoft.com/en-us/documentation/articles/manage-availability-virtual-machines/>`_.                                                                                                  |
 +---------------------+--------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 **Autoscaling**
@@ -329,25 +329,25 @@ Here we’ve set an instance to autoscale and load balance with a limit of up to
 
 .. raw:: html
 
-	<div class="doc-image padding-1x">
-    	<img class="img-responsive" src="/../assets/img/docs/providers/azure-configureautoscaling-loadbalancing-depprofile.png" alt="Enabling Autoscaling and Load Balancing for Virtual Machine Deployments">
-	</div>
+    <div class="doc-image padding-1x">
+        <img class="img-responsive" src="/../assets/img/docs/providers/azure-configureautoscaling-loadbalancing-depprofile.png" alt="Enabling Autoscaling and Load Balancing for Virtual Machine Deployments">
+    </div>
 
 Microsoft SQL Database Service
-----------------------------------
+------------------------------
 
 In ElasticBox, Microsoft Azure SQL Database service is available as a service box. Select the **Microsoft SQL Database Service** box from Instances > Quick Starts to `deploy a new instance </../documentation/deploying-and-managing-instances/deploying-managing-instances/#new-instance>`_. In the instance dialog, provide deployment variable values and select Azure deployment options.
 
 Deployment Variables
-````````````````````````
+````````````````````
 
 Provide these variable values before you deploy a SQL Database to Azure.
 
 .. raw:: html
 
-	<div class="doc-image padding-1x">
-    	<img class="img-responsive" src="/../assets/img/docs/providers/azure-sqldatabase-deploymentvariables.png" alt="Provide Deployment Variable Values">
-	</div>
+    <div class="doc-image padding-1x">
+        <img class="img-responsive" src="/../assets/img/docs/providers/azure-sqldatabase-deploymentvariables.png" alt="Provide Deployment Variable Values">
+    </div>
 
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | Variable                         | Description                                                                                                                |
@@ -363,13 +363,13 @@ Provide these variable values before you deploy a SQL Database to Azure.
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
 Azure SQL Database Service Deployment Options
-`````````````````````````````````````````````````
+`````````````````````````````````````````````
 
 .. raw:: html
 
-	<div class="doc-image padding-1x">
-    	<img class="img-responsive" src="/../assets/img/docs/providers/azure-sqldatabase-depprofile.png" alt="Select Deployment Settings for Azure SQL Database">
-	</div>
+    <div class="doc-image padding-1x">
+        <img class="img-responsive" src="/../assets/img/docs/providers/azure-sqldatabase-depprofile.png" alt="Select Deployment Settings for Azure SQL Database">
+    </div>
 
 **Deployment**
 
