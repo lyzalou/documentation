@@ -1,5 +1,5 @@
 Organizations API
-********************************
+*****************
 
 Manage organizations.
 
@@ -17,7 +17,7 @@ Manage organizations.
 
 
 GET /services/organizations/{organization_name}
-------------------------------------------------------
+-----------------------------------------------
 
 Gets the schema of a given organization.
 
@@ -88,7 +88,7 @@ Gets the schema of a given organization.
 | providers                  | array                | List of cloud providers the organization can enable to register and deploy. Each provider type has the following properties:                                                            |
 |                            |                      |  * enabled: Boolean value of true if enabled, else false.                                                                                                                               |
 |                            |                      |  * type: String values of the supported cloud providers: Amazon Web Services, Openstack, VMWare vSphere, Google Compute, Microsoft Azure, Cloudstack, SoftLayer, VMware vCloud Director,|
-|                            |                      |    Amazon Web Services GovCloud, Rackspace.                                                                                                                                   |
+|                            |                      |    Amazon Web Services GovCloud, Rackspace.                                                                                                                                             |
 |                            |                      |  * description: String that briefly enumerates the services from the cloud provider.                                                                                                    |
 |                            |                      |  * pricing: Array of pricing information for Linux and Windows compute instance types. Only available for Amazon Web Services.                                                          |
 +----------------------------+----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -353,7 +353,7 @@ Gets the schema of a given organization.
 	</pre>
 
 PUT /services/organizations/{organization_name}
----------------------------------------------------
+-----------------------------------------------
 
 Updates an existing organization given its name. Only the organization administrator can update.
 
@@ -650,7 +650,7 @@ Updates an existing organization given its name. Only the organization administr
 | providers                  | array                | List of cloud providers the organization can enable to register and deploy. Each provider type has the following properties:                                                            |
 |                            |                      |  * enabled: Boolean value of true if enabled, else false.                                                                                                                               |
 |                            |                      |  * type: String values of the supported cloud providers: Amazon Web Services, Openstack, VMWare vSphere, Google Compute, Microsoft Azure, Cloudstack, SoftLayer, VMware vCloud Director,|
-|                            |                      |    Amazon Web Services GovCloud, Rackspace.                                                                                                                                   |
+|                            |                      |    Amazon Web Services GovCloud, Rackspace.                                                                                                                                             |
 |                            |                      |  * description: String that briefly enumerates the services from the cloud provider.                                                                                                    |
 |                            |                      |  * pricing: Array of pricing information for Linux and Windows compute instance types. Only available for Amazon Web Services.                                                          |
 +----------------------------+----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -742,7 +742,7 @@ Updates an existing organization given its name. Only the organization administr
 | providers                  | array                | List of cloud providers the organization can enable to register and deploy. Each provider type has the following properties:                                                            |
 |                            |                      |  * enabled: Boolean value of true if enabled, else false.                                                                                                                               |
 |                            |                      |  * type: String values of the supported cloud providers: Amazon Web Services, Openstack, VMWare vSphere, Google Compute, Microsoft Azure, Cloudstack, SoftLayer, VMware vCloud Director,|
-|                            |                      |    Amazon Web Services GovCloud, Rackspace.                                                                                                                                   |
+|                            |                      |    Amazon Web Services GovCloud, Rackspace.                                                                                                                                             |
 |                            |                      |  * description: String that briefly enumerates the services from the cloud provider.                                                                                                    |
 |                            |                      |  * pricing: Array of pricing information for Linux and Windows compute instance types. Only available for Amazon Web Services.                                                          |
 +----------------------------+----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1012,7 +1012,7 @@ Updates an existing organization given its name. Only the organization administr
 	</pre>
 
 PUT /organizations/{organization_name}/sync_groups
--------------------------------------------------------
+--------------------------------------------------
 
 Queues a request to sync LDAP groups. The sync request, depending on the amount of data from the LDAP service, can take a few minutes. The ldap_last_sync_completed property updates when the request finishes successfully.
 
@@ -1082,7 +1082,7 @@ Queues a request to sync LDAP groups. The sync request, depending on the amount 
 | providers                  | array                | List of cloud providers the organization can enable to register and deploy. Each provider type has the following properties:                                                            |
 |                            |                      |  * enabled: Boolean value of true if enabled, else false.                                                                                                                               |
 |                            |                      |  * type: String values of the supported cloud providers: Amazon Web Services, Openstack, VMWare vSphere, Google Compute, Microsoft Azure, Cloudstack, SoftLayer, VMware vCloud Director,|
-|                            |                      |    Amazon Web Services GovCloud, Rackspace.                                                                                                                                   |
+|                            |                      |    Amazon Web Services GovCloud, Rackspace.                                                                                                                                             |
 |                            |                      |  * description: String that briefly enumerates the services from the cloud provider.                                                                                                    |
 |                            |                      |  * pricing: Array of pricing information for Linux and Windows compute instance types. Only available for Amazon Web Services.                                                          |
 +----------------------------+----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

@@ -1,5 +1,5 @@
 Using CenturyLink Cloud
-********************************
+***********************
 
 Automate application deployments through ElasticBox when you launch to Linux or Windows virtual servers in the CenturyLink Cloud public cloud. ElasticBox simplifies deployments with a dedicated focus on applications rather than infrastructure. See the `benefits and use cases </../documentation/>`_.
 
@@ -9,7 +9,7 @@ Automate application deployments through ElasticBox when you launch to Linux or 
 * `Deploy to CenturyLink Cloud from ElasticBox`_
 
 Register CenturyLink Cloud Provider in ElasticBox
----------------------------------------------
+-------------------------------------------------
 
 You need a `CenturyLink Cloud account <https://www.ctl.io>`_ to be able to deploy from ElasticBox. When you have an account, follow these steps to register it in ElasticBox to automate your deployments.
 
@@ -19,14 +19,14 @@ You need a `CenturyLink Cloud account <https://www.ctl.io>`_ to be able to deplo
 
 2. Enter the CenturyLink username and password as shown and save.
 
-	.. raw:: html
+    .. raw:: html
 
-		<div class="doc-image padding-1x">
-	    	<img class="img-responsive" src="/../assets/img/docs/providers/CenturyLink Cloud-entercredentials.png" alt="Enter CenturyLink Cloud Credentials">
-	    </div>
+        <div class="doc-image padding-1x">
+            <img class="img-responsive" src="/../assets/img/docs/providers/CenturyLink Cloud-entercredentials.png" alt="Enter CenturyLink Cloud Credentials">
+        </div>
 
 Deploy to CenturyLink Cloud from ElasticBox
---------------------------------------
+-------------------------------------------
 
 Select from the following deployment profile options to launch workloads on Linux or Windows machines.
 
@@ -54,7 +54,7 @@ Note a couple of things about instances you deploy on CenturyLink Cloud through 
 | Group                            | Select placement group for the new instance.                                                                               |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | Template                         | Select from a list of CenturyLink Cloud Linux or Windows images. Images are specific to the box service type, that is,     |
-Linux or Windows.                                                                                                                                               |
+|                                  | Linux or Windows.                                                                                                          |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | Managed                          | Allow CenturyLink manage this server.                                                                                      |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
@@ -66,9 +66,9 @@ Linux or Windows.                                                               
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | Option                           | Description                                                                                                                |
 +==================================+============================================================================================================================+
-| Network                      	   | Select a vlan for the new instance.                                                                                        |
+| Network                          | Select a vlan for the new instance.                                                                                        |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| Public IP      		           |  Check the box to attach a public IP address to the new instance.                                                          |
+| Public IP                        |  Check the box to attach a public IP address to the new instance.                                                          |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
 **Compute**
@@ -76,7 +76,7 @@ Linux or Windows.                                                               
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | Option                           | Description                                                                                                                |
 +==================================+============================================================================================================================+
-| CPUs                            | Select virtual CPUs for the instance. You can get up to 16 cores.                                                           |
+| CPUs                             | Select virtual CPUs for the instance. You can get up to 16 cores.                                                          |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | Memory                           | Allocate RAM for the instance. You can get up to 128 GB.                                                                   |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------+

@@ -1,5 +1,5 @@
 Deploying and Managing Instances
-**************************************
+********************************
 
 **In this article:**
 
@@ -9,7 +9,7 @@ Deploying and Managing Instances
 * `Handling instance lifecycle states`_
 
 Deploying a New Instance
---------------------------------
+------------------------
 
 An instance is an instantiated version of a box launched to provider's virtual infrastructure or your own. Follow these steps to launch one.
 
@@ -50,7 +50,7 @@ An instance is an instantiated version of a box launched to provider's virtual i
 	* `Binding type variables </../documentation/configuring-and-managing-boxes/parameterizing-boxes-with-variables/#box-creating-bindingtype>`_ are also listed here. Depending on how it’s defined in the box, you can select as its value any instance or that of a specific box type deploying or active in the workspace.
 
 Creating a Deployment Profile
---------------------------------
+-----------------------------
 
 A deployment profile defines settings for your infrastructure that are applied at deployment time. These settings include the cloud provider that will host the deployed boxes, how the virtual infrastructure will be sized, and where it will be placed.
 
@@ -84,6 +84,7 @@ A deployment profile defines settings for your infrastructure that are applied a
 
 Settings in the deployment profile vary by the provider you deploy to. For provider specific deployment settings, see these articles:
 
+* `Using CenturyLink Cloud </../documentation/deploying-and-managing-instances/using-centurylink/>`_
 * `Using Google Cloud </../documentation/deploying-and-managing-instances/using-your-google-cloud-account/>`_
 * `Using Your AWS Account </../documentation/deploying-and-managing-instances/using-your-aws-account/>`_
 * `Using the vSphere Private Datacenter </../documentation/deploying-and-managing-instances/using-the-vsphere-private-datacenter/>`_
@@ -94,7 +95,7 @@ Settings in the deployment profile vary by the provider you deploy to. For provi
 **Note**: If you’re deploying to public cloud providers like AWS or Google Compute, you’ll most likely be charged by the cloud provider for the virtual infrastructure you provision. Familiarize yourself with their pricing model as ElasticBox assumes no responsibility for costs incurred.
 
 Scheduling Instances
---------------------------------
+--------------------
 
 Save on compute and hosting costs by scheduling instances at launch time. Rather than remember to turn off a machine manually, schedule it to stop automatically at your convenience. When launching, you can schedule an instance to shut down or terminate at a given UTC time.
 
@@ -133,7 +134,7 @@ Follow these steps to schedule an instance.
 Besides the user interface, you can automatically schedule instances using the instances API with a `POST </../documentation/api/instances/#post-instances>`_ or `PUT </../documentation/api/instances/#put-instances-instance_id>`_ request.
 
 Handling Instance Lifecycle States
-----------------------------------------
+----------------------------------
 
 Instance actions (on the instances page or the lifecycle editor) trigger deployment related event scripts from your box. Take these actions to start, stop, terminate an instance, and even perform upgrades or make changes to your live instance.
 

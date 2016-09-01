@@ -1,5 +1,5 @@
 Deploying to Any Infrastructure
-***********************************
+*******************************
 
 **In this article:**
 
@@ -8,7 +8,7 @@ Deploying to Any Infrastructure
 * `ElasticBox agent command`_
 
 Overview
----------------------------------------------
+--------
 
 You can launch boxes on any infrastructure by running the ElasticBox agent. The agent is required to execute box variables and scripts and run lifecycle operations. To install the agent, you run a Bash command. The infrastructure can be a virtual machine in your laptop, physical machines on premise, a datacenter, or any cloud provider environment. We support running it on Linux distributions Debian 6 and 7, Ubuntu 12.04 and 14.04, RedHat 6.x, CentOS 6.x, and any AWS Linux AMI. No matter where you choose to deploy, boxes launch consistently as they would on any cloud provider.
 
@@ -19,7 +19,7 @@ You can launch boxes on any infrastructure by running the ElasticBox agent. The 
 	</div>
 
 How to Deploy with the ElasticBox Agent
---------------------------------------------
+---------------------------------------
 
 Run the ElasticBox agent on the Linux machine where you want to launch the box. Once the box is launched, sign in to ElasticBox and access the instance from the `Instances page <https://elasticbox.com/#/instances>`_ to edit its box makeup, debug, or manage its lifecycle. Follow these steps to launch a box on your infrastructure.
 
@@ -47,7 +47,7 @@ Run the ElasticBox agent on the Linux machine where you want to launch the box. 
 			</pre>
 
 ElasticBox Agent Command
----------------------------
+------------------------
 
 Use cURL to download and run the agent with piped parameters.
 
