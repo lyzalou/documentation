@@ -48,6 +48,7 @@ Contents:
    :caption: Deploying Anywhere
 
       Deploying Instances <deploying-and-managing-instances/deploying-managing-instances.rst>
+      CenturyLink Cloud <deploying-and-managing-instances/using-centurylink.rst>
       Google Cloud <deploying-and-managing-instances/using-your-google-cloud-account.rst>
       Amazon Web Services <deploying-and-managing-instances/using-your-aws-account.rst>
       AWS GovCloud <deploying-and-managing-instances/using-awsgovcloud.rst>
