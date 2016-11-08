@@ -44,9 +44,10 @@ Setting Up LDAP in ElasticBox
 1. Sign in to ElasticBox as the `default administrator </../documentation/getting-started/enterprise-setup-onboarding/#enterprise-setup>`_.
 2. From the user menu drop-down on the top right, select **Admin Console**.
 3. Under Authentication, enable LDAP by turning it on.
-4. For each LDAP source, provide information to :ref:`connect <ldap_connection>` and the conditions to :ref:`search users <ldap_users>` and :ref:`sync groups <ldap_groups>`. This information is divided into:
+4. For each LDAP source, provide information to :ref:`connect <connection>` and the conditions to :ref:`search users <users>` and :ref:`sync groups <groups>`. This information is divided into:
 
-    .. _ldap_connection:
+    .. _connection:
+
     Connection
     ^^^^^^^^^^
 
@@ -59,12 +60,13 @@ Setting Up LDAP in ElasticBox
     * **Connection String:** Required. The LDAP connection URI. This is of the form: *schema://host[:port]*. It comprises:
         *schema*: 'ldap' or 'ladps' for SSL connections.
         *host*: LDAP server hostname as a fully qualified domain name or valid IP address, such as 'ldap.domain.com' or '172.0.1.12'.
-        *port*: Optional if you connect to the service through port 389, otherwise, you must include it.
-    * **Domain Search User:** The LDAP service account that performs the user lookups, when the LDAP server does not support public queries. Example: cn=Alvaro Maclellan,ou=Product Development,dc=elasticbox,dc=com. For Active Directory, you can also use the domainusername format.
-    * **Domain Search Password:** Password for the LDAP service account that looks up users who try to log in.
-        **Note:** Provide the search user and search password fields if connecting to an LDAP service that does not support public queries. Without the settings, LDAP group sync won’t work and users can’t sign up in ElasticBox.
+        *port*: Optional. We use the default protocol if not provided.
+    * **Domain Search User:** The username to authenticate to the LDAP server. Example: cn=Alvaro Maclellan,ou=Product Development,dc=elasticbox,dc=com.
+    * **Domain Search Password:** Password for the username to authenticate to the LDAP server.
+        **Note:** If search user and search password fields are not provided and the LDAP server does not support public queries, the connection and LDAP group sync will not work. The users will not be able to sign up in ElasticBox.
 
-    .. _ldap_users:
+    .. _users:
+
     Users
     ^^^^^
 
@@ -74,11 +76,12 @@ Setting Up LDAP in ElasticBox
 			<img class="img-responsive" src="/../assets/img/docs/adminconsole/admin-console-authenticate-users-with-ldap-users.png" alt="Authenticate Users via LDAP - Users">
 		</div>
 
-    * **Base DN for Users:** The subtree to use when running queries against the LDAP server for look up users. For example, ou=Product Development,dc=elasticbox,dc=com. If empty, we start the lookup at the root level.
+    * **Base DN for Users:** The subtree to use when running queries against the LDAP server to look up users. For example, ou=Product Development,dc=elasticbox,dc=com. If empty, we start the lookup at the root level.
     * **Group DN:** This value is used in addition to the base DN when searching users. The user must be member of the group indicated. Example: cn=elasticos,ou=Groups,dc=elasticbox,dc=com. Add a new LDAP source to specify another group.
     * **Email Field Name:** The field where the email is stored on the user. In Active Directory is 'userPrincipalName'. In others is commonly 'email' or 'mail'.
 
-    .. _ldap_groups:
+    .. _groups:
+
     Groups
     ^^^^^^
 
