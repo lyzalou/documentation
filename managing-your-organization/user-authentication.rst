@@ -44,12 +44,10 @@ Setting Up LDAP in ElasticBox
 1. Sign in to ElasticBox as the `default administrator </../documentation/getting-started/enterprise-setup-onboarding/#enterprise-setup>`_.
 2. From the user menu drop-down on the top right, select **Admin Console**.
 3. Under Authentication, enable LDAP by turning it on.
-4. For each LDAP source, provide information to :ref:`connect <connection>` and the conditions to :ref:`search users <users>` and :ref:`sync groups <groups>`. This information is divided into:
+4. For each LDAP source, provide information to `connect </../documentation/managing-your-organization/user-authentication/#connection>`_ and the conditions to `search users </../documentation/managing-your-organization/user-authentication/#users>`_ and `sync groups </../documentation/managing-your-organization/user-authentication/#groups>`_. This information is divided into:
 
-    .. _connection:
-
-    Connection
-    ^^^^^^^^^^
+Connection
+``````````
 
 	.. raw:: html
 
@@ -65,10 +63,8 @@ Setting Up LDAP in ElasticBox
     * **Domain Search Password:** Password for the username to authenticate to the LDAP server.
         **Note:** If search user and search password fields are not provided and the LDAP server does not support public queries, the connection and LDAP group sync will not work. The users will not be able to sign up in ElasticBox.
 
-    .. _users:
-
-    Users
-    ^^^^^
+Users
+`````
 
 	.. raw:: html
 
@@ -80,10 +76,8 @@ Setting Up LDAP in ElasticBox
     * **Group DN:** This value is used in addition to the base DN when searching users. The user must be member of the group indicated. Example: cn=elasticos,ou=Groups,dc=elasticbox,dc=com. Add a new LDAP source to specify another group.
     * **Email Field Name:** The field where the email is stored on the user. In Active Directory is 'userPrincipalName'. In others is commonly 'email' or 'mail'.
 
-    .. _groups:
-
-    Groups
-    ^^^^^^
+Groups
+``````
 
     .. raw:: html
 
@@ -92,7 +86,7 @@ Setting Up LDAP in ElasticBox
 		</div>
 
     * **Base DN for Groups:** The subtree to use when running queries against the LDAP server for sync groups. For example, ou=Groups,dc=elasticbox,dc=com. If empty, we start the lookup at the root level.
-    * **Group Object Filter:** The filter that all groups must satisfy. It must be a valid query. Nodes must fulfill both this and '(|(objectClass=groupOfNames)(objectClass=group)(objectClass=groupOfUniqueNames)(objectClass=posixGroup))'.
+    * **Group Object Filter:** The filter that all groups must satisfy. It must be a valid query. Nodes must fulfill both this and ``'(|(objectClass=groupOfNames)(objectClass=group)(objectClass=groupOfUniqueNames)(objectClass=posixGroup))'``.
 
 5. Click **Test Connection** to verify the configuration.
 6. Click **Save** to keep the information.
