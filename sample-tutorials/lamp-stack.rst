@@ -30,7 +30,7 @@ On the Boxes page, click **New** > **Template** and select **MySQL Database**. C
 .. raw:: html
 
 	<div class="doc-image padding-1x">
-    	<img class="img-responsive" src="/../documentation/sample-tutorials/img/Mysqlboxgeneration.png" alt="Create a Database Box">
+    	<img class="img-responsive" src="/../documentation/sample-tutorials/img/Mysqlboxgeneration.png" >
     </div>
 
 **Define Policy configuration**
@@ -41,7 +41,7 @@ In the **Code** Tab, edit Policy. Select eu-west-1 as in **Region** combo, under
 .. raw:: html
 
 	<div class="doc-image padding-1x">
-    	<img class="img-responsive" src="/../documentation/sample-tutorials/img/templatePolicyDefinition.png" alt="Create a Database Box">
+    	<img class="img-responsive" src="/../documentation/sample-tutorials/img/templatePolicyDefinition.png" >
     </div>
 
 **Define the database name, user and password**
@@ -54,18 +54,17 @@ After selecting the new box, in the **Code** Tab on variables you can change the
 		<img class="img-responsive" src="/../documentation/sample-tutorials/img/boxDatabaseUserPassConfig.png" alt="Create a Database Box">
 	</div>
 
-**Change
 
 Define the Deployment Policy
 --------------------------------
 
-If you have already `registered an AWS account </../documentation/deploying-and-managing-instances/using-your-aws-account/#connect-awsaccount/>` you should have three policy boxes on **Boxes** menu: default-large-us-east-1, default-medium-us-east-1 and default-small-us-east-1.
+If you have already `registered an AWS account </../documentation/deploying-and-managing-instances/using-your-aws-account/#connect-awsaccount/>`_ you should have three policy boxes on **Boxes** menu: default-large-us-east-1, default-medium-us-east-1 and default-small-us-east-1.
 Select default-small-us-east-1 tools and click on **Clone Box**.
 
 .. raw:: html
 
 	<div class="doc-image padding-1x">
-		<img class="img-responsive" src="/../documentation/sample-tutorials/img/CloneBox.png" alt="Create a Database Box">
+		<img class="img-responsive" src="/../documentation/sample-tutorials/img/CloneBox.png" height="400">
 	</div>
 
 
@@ -322,7 +321,7 @@ To deploy the app, you need AWS as a provider because we're using the AWS CloudF
 
 **Launch the Database Tier**
 
-Before deploying the app tier, you need an active database instance, so launch the database box first. On the Instances page, click **New**. Select the MySQL DB box. Enter values for the username and password variables. The app tier pulls these values through the binding to connect to the database. Click **Deploy**.
+Before deploying the app tier, you need an active database instance, so launch the database box first. On the Instances page, click **New**. Select the MySQL DB box. Enter values for the username and password variables. The app tier pulls these values through the binding to connect to the database. To define this binding add a **tag**, it will be use later on Lamp instance. Click **Deploy**.
 
 .. raw:: html
 
@@ -332,7 +331,7 @@ Before deploying the app tier, you need an active database instance, so launch t
 
 **Launch the App Tier**
 
-From the Instances page, click **New** and select the LAMP Stack box. For the deployment policy, select the AWS Policy you created. For the mysql_service binding, select the database instance you previously launched. Also schedule the instance to terminate an hour after deploying. Click **Deploy** to create an instance of the app tier.
+From the Instances page, click **New** and select the LAMP Stack box. For the deployment policy, select the AWS Policy you created. For the mysql_service binding, select the tag you define in the instance you previously launched. Also schedule the instance to terminate an hour after deploying. Click **Deploy** to create an instance of the app tier.
 
 .. raw:: html
 
