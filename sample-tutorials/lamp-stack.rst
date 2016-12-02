@@ -24,13 +24,60 @@ Define the LAMP Stack Database Tier
 
 **Create a MySQL Database box**
 
-On the Boxes page, click **New** > **CloudFormation** and select **MySQL Database**. Name it MySQL DB and select an AWS provider account registered in ElasticBox because this box needs the AWS CloudFormation service. Save.
+For this tutorial we will use an Amazon RDS, as the box is already pre-configured.
+On the Boxes page, click **New** > **Template** and select **MySQL Database**. Choose the MySql Icon, name it MySQL DB and select your AWS provider. This example box needs the AWS CloudFormation service. Save.
 
 .. raw:: html
 
 	<div class="doc-image padding-1x">
-    	<img class="img-responsive" src="/../assets/img/docs/tutorials/lamp-create-mysqldatabase-box.png" alt="Create a Database Box">
+    	<img class="img-responsive" src="/../documentation/sample-tutorials/img/Mysqlboxgeneration.png" >
     </div>
+
+**Define Policy configuration**
+
+In order to make the db available on the apache server we will need to tune the policy configuration. In this tutorial we would put all the instances on the same VPC.
+In the **Code** Tab, edit Policy. Select eu-west-1 as in **Region** combo, under **Placement** select any vpc you have already defined in **Cloud** combo, in our case vpc-c00dc7a5. Select 'default VPC security group' in **Security Groups** under **Network**
+
+.. raw:: html
+
+	<div class="doc-image padding-1x">
+    	<img class="img-responsive" src="/../documentation/sample-tutorials/img/templatePolicyDefinition.png" >
+    </div>
+
+**Define the database name, user and password**
+
+After selecting the new box, in the **Code** Tab on variables you can change the user, password and database name. In this tutorial we will use **sampledb** as database name.
+
+.. raw:: html
+
+	<div class="doc-image padding-1x">
+		<img class="img-responsive" src="/../documentation/sample-tutorials/img/boxDatabaseUserPassConfig.png" alt="Create a Database Box">
+	</div>
+
+
+Define the Deployment Policy
+--------------------------------
+
+If you have already `registered an AWS account </../documentation/deploying-and-managing-instances/using-your-aws-account/#connect-awsaccount/>`_ you should have three policy boxes on **Boxes** menu: default-large-us-east-1, default-medium-us-east-1 and default-small-us-east-1.
+Select default-small-us-east-1 tools and click on **Clone Box**.
+
+.. raw:: html
+
+	<div class="doc-image padding-1x">
+		<img class="img-responsive" src="/../documentation/sample-tutorials/img/CloneBox.png" height="400">
+	</div>
+
+
+On the pop-up define the new Box name as 'default-vpc-eu-west-1' and save.
+
+Select the new Box. On **code** tab, edit the policy menu. Define **Region** on Resource, **Cloud** on Placement, and **Security Groups** on Network to have the same values as the mySql box. In this tutorial 'eu-west-1', 'vpc-c00dc7a5' and  'default VPC security group'
+
+.. raw:: html
+
+	<div class="doc-image padding-1x">
+		<img class="img-responsive" src="/../documentation/sample-tutorials/img/policyBoxConfiguration.png" alt="Create a Database Box">
+	</div>
+
 
 Define the LAMP Stack App Tier
 --------------------------------
@@ -42,28 +89,28 @@ On the Boxes page, click **New** > **Script**. Name it LAMP Stack. Since LAMP ne
 .. raw:: html
 
 	<div class="doc-image padding-1x">
-    	<img class="img-responsive" src="/../assets/img/docs/tutorials/lamp-createbox.png" alt="Create LAMP box">
+    	<img class="img-responsive" src="/../documentation/sample-tutorials/img/LampBoxCreation.png" alt="Create LAMP box">
     </div>
 
 **Step 2. Indicate a relationship to the database tier with a binding.**
 
-In the Configuration tab, under Variables, click **New**. Select **Binding**. Call it mysql_service and bind to the MySQL DB box you created earlier.
+In the Code tab, on Variables, click **New**. Select **Binding**. Call it mysql_service and bind to the MySQL DB box you created earlier.
 
 **Note**: Variable names are case sensitive, so name exactly as given.
 
-At this stage, you're selecting a box not a real instance for the binding. You'll select the actual instance at deploy time. Since you need a database, make the binding required. You’re saying you need an available database instance before deploying the app tier.
+At this stage, you're selecting a box not a real instance for the binding. You'll select the actual instance at deploy time.
 
 Save when done to create the variable.
 
 .. raw:: html
 
 	<div class="doc-image padding-1x">
-    	<img class="img-responsive" src="/../assets/img/docs/tutorials/lamp-indicatedatabaserelationship-withbindingvariable.png" alt="Indicate Database Relationship with a Binding">
+    	<img class="img-responsive" src="/../documentation/sample-tutorials/img/bindingsql.png" alt="Indicate Database Relationship with a Binding">
     </div>
 
 **Step 3. Allow traffic to and from the app tier with a port variable.**
 
-In the Configuration tab, under Variables, click **New**. Select **Port**. Call it PORT and give 80 as the value.
+In the Code tab, on Variables, click **New**. Select **Port**. Call it HTTP and give 80 as the value.
 
 Save when done to create the variable.
 
@@ -97,7 +144,7 @@ Copy, paste the following code in a plain text file. Save it as Create_Sample_Da
 	INSERT INTO users VALUES ('Michael','Snow','88, Alamo Road','dianak', 'd3bf2a5557ce22c2b971');
     </pre>
 
-In the LAMP box Configuration tab, under Variables, click **New**. Select **File**. Call it SQL_SCRIPT and upload the file you saved. This file will be pushed to the database at deploy time.
+In the LAMP box Code tab, on Variables, click **New**. Select **File**. Call it SQL_SCRIPT and upload the file you saved. This file will be pushed to the database at deploy time.
 
 .. raw:: html
 
@@ -107,7 +154,7 @@ In the LAMP box Configuration tab, under Variables, click **New**. Select **File
 
 **Step 5. Nest the default GitHub box to install PHP from GitHub.**
 
-In the Configuration tab, under Variables, click **New**. Select **Box**. Call it GIT_HUB and pick the default GitHub box as the value.
+In the Code tab, under Variables, click **New**. Select **Box**. Call it GIT_HUB and pick the default GitHub box as the value.
 
 Save when done to create the variable.
 
@@ -131,7 +178,7 @@ CLONE_URL: **https://github.com/ElasticBox/Easy-PHP-MySQL.git**
             <div class="circle green"></div>
           </div>
           <div class="browser-window">
-            <img class="img-responsive" src="/../assets/img/docs/tutorials/lamp-configuregithubboxvariables-todownloadPHPscripts.png" alt="Configure GitHub Box Variables to Download PHP Scripts">
+            <img class="img-responsive" src="/../documentation/sample-tutorials/img/LAMPboxConfig.png" alt="Configure GitHub Box Variables to Download PHP Scripts">
           </div>
       </div>
     </div>
@@ -158,7 +205,7 @@ Copy, paste the following code in the install event dialog, then save.
 	#!/bin/bash
 
 	# To ensure that all of your software packages are up to date, perform a quick software update on your instance.
-	 
+
 	# This process may take a few minutes, but it is important to make sure you have the latest security updates and bug fixes.
 
 	# We use the -y option that installs the updates without asking for confirmation.
@@ -167,7 +214,7 @@ Copy, paste the following code in the install event dialog, then save.
 	yum update -y
 
 
-	# Install the Apache web server, MySQL, and PHP software packages. 
+	# Install the Apache web server, MySQL, and PHP software packages.
 
 	# We use the yum groupinstall command to install multiple software packages and all related dependencies at the same time.
 
@@ -192,9 +239,11 @@ Copy, paste the following code in the install event dialog, then save.
 
 	chkconfig httpd on
 
+  #
+	# This is only to show the configuration for this sample.
+	#
 
 	# Verify that httpd is on by running:
-
 
 	chkconfig --list httpd
 
@@ -256,27 +305,12 @@ Under Events > start, click **start**. Copy, paste the following code and save. 
 	<pre>
 	#!/bin/bash
 
-	# In start script the bindings are ready for use 
+	# In start script the bindings are ready for use
 
 	curl -ks $SQL_SCRIPT | mysql --host=$mysql_service.address.public  --port=$mysql_service.port --user=$mysql_service.username --password=$mysql_service.password
     </pre>
 
 Yay! You just defined a simple LAMP stack application and connected its tiers with a binding.
-
-.. raw:: html
-
-	<div class="doc-image padding-1x">
-      <div class="browser-feature">
-        <div class="indicators">
-            <div class="circle magenta"></div>
-            <div class="circle orange"></div>
-            <div class="circle green"></div>
-          </div>
-          <div class="browser-window">
-            <img class="img-responsive" src="/../assets/img/docs/tutorials/lamp-definedbox.png" alt="Fully Configured LAMP Stack Box">
-          </div>
-      </div>
-    </div>
 
 Deploy the LAMP Stack App
 ---------------------------
@@ -287,30 +321,22 @@ To deploy the app, you need AWS as a provider because we're using the AWS CloudF
 
 **Launch the Database Tier**
 
-Before deploying the app tier, you need an active database instance, so launch the database box first. On the Instances page, click **New**. Select the MySQL DB box. Enter values for the username and password variables. The app tier pulls these values through the binding to connect to the database. Click **Deploy**.
+Before deploying the app tier, you need an active database instance, so launch the database box first. On the Instances page, click **New**. Select the MySQL DB box. Enter values for the username and password variables. The app tier pulls these values through the binding to connect to the database. To define this binding add a **tag**, it will be use later on Lamp instance. Click **Deploy**.
 
 .. raw:: html
 
 	<div class="doc-image padding-1x">
-		<img class="img-responsive" src="/../assets/img/docs/tutorials/lamp-launchdatabasetier-createinstance.png" alt="Create an Instance of the Database">
+		<img class="img-responsive" src="/../documentation/sample-tutorials/img/tagSqlbinding.png" alt="Create an Instance of the Database">
 	</div>
 
 **Launch the App Tier**
 
-You need a deployment policy to consume the right AWS resources for the LAMP Stack box. From the Boxes page, click **New** > **Deployment Policy**. Select the AWS provider account registered in ElasticBox to which you deployed the database. Call the box AWS Policy. Tag Linux as a service the policy provides under Claims. By doing so, you'll be able to select this policy when deploying the LAMP box. Save.
+From the Instances page, click **New** and select the LAMP Stack box. For the deployment policy, select the AWS Policy you created. For the mysql_service binding, select the tag you define in the instance you previously launched. Also schedule the instance to terminate an hour after deploying. Click **Deploy** to create an instance of the app tier.
 
 .. raw:: html
 
 	<div class="doc-image padding-1x">
-		<img class="img-responsive" src="/../assets/img/docs/tutorials/lamp-deploymentpolicy.png" alt="Create a Deployment Policy">
-	</div>
-
-From the Instances page, click **New** and select the LAMP Stack box. For the deployment policy, select the AWS Policy you just created. For the mysql_service binding, select the database instance you previously launched. Also schedule the instance to terminate an hour after deployiong to save money. Click **Deploy** to create an instance of the app tier.
-
-.. raw:: html
-
-	<div class="doc-image padding-1x">
-		<img class="img-responsive" src="/../assets/img/docs/tutorials/lamp-apptierbox-deploy.png" alt="Deploy the LAMP Stack App Tier">
+		<img class="img-responsive" src="/../documentation/sample-tutorials/img/lampInstanceBindig.png" alt="Deploy the LAMP Stack App Tier">
 	</div>
 
 See how ElasticBox launches the database and the app tiers on separate machines. Once the app tier comes online, you see it connected to the database.
