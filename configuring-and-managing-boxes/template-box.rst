@@ -1,5 +1,10 @@
+Template Boxes
+**************
+
+* `Deploy Using CloudFormation Templates`_
+
 Deploy Using CloudFormation Templates
-*****************************************
+*************************************
 
 The ElasticBox CloudFormation box type runs on the `AWS CloudFormation service <http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html>`_.
 
@@ -16,18 +21,18 @@ In this article:
 * `Connect to other CloudFormation boxes over bindings`_
 
 Create a CloudFormation Template and Launch a Stack
--------------------------------------------------------
+---------------------------------------------------
 
 The CloudFormation box consists mainly of a template where you describe all the AWS resources you need to run your application. ElasticBox parses the template and automatically shows input parameters under a section called Variables. This enables you to customize a template easily.
 
 We use a sample Wordpress template to show how to create and launch a CloudFormation template in ElasticBox.
 
 Step 1. Create the template
-```````````````````````````````
+```````````````````````````
 
 1. `Log in to ElasticBox <http://elasticbox.com/login>`_.
 
-2. Click Boxes > New > CloudFormation > CloudFormation Template. Give the box a meaningful name to identify it in the box service catalog. Specify other `metadata </../../documentation/core-concepts/boxes/#box-metadata>`_.
+2. Click Boxes > New > Template > CloudFormation Template. Give the box a meaningful name to identify it in the box service catalog. Specify other `metadata </../../documentation/core-concepts/boxes/#box-metadata>`_.
 
     .. raw:: html
 
@@ -35,7 +40,7 @@ Step 1. Create the template
         <img class="img-responsive" src="/../assets/img/docs/cloudformation/cloudformation-box-definebasicmetadata.png" alt="Select CloudFormation Box Type">
       </div>
 
-3. In the box Configuration tab under Template, click **New**. In this walkthrough, we import a `sample WordPress template <https://s3.amazonaws.com/cloudformation-templates-us-east-1/WordPress_Single_Instance_With_RDS.template>`_ template from a URL. When we save, contents from the URL are ported over.
+3. In the box, select **New** in Template, under Code tab. In this walkthrough, we import a `sample WordPress template <https://s3.amazonaws.com/cloudformation-templates-us-east-1/WordPress_Single_Instance_With_RDS.template>`_ from a URL. When we save, contents from the URL are ported over.
 
     .. raw:: html
 
@@ -52,9 +57,9 @@ Step 1. Create the template
     **Note**: When you import from a file or a URL, make sure its content is formatted in JSON and follows the CloudFormation template conventions.
 
 Step 2. Author the template
-```````````````````````````````
+```````````````````````````
 
-1. Start with a `sample AWS CloudFormation template <https://aws.amazon.com/cloudformation/aws-cloudformation-templates/>`_ and click **Edit** to modify. Here we use the sample WordPress template.
+1. Start with a `sample AWS CloudFormation template <https://aws.amazon.com/cloudformation/aws-cloudformation-templates/>`_ and click the pencil to modify. Here we use the sample WordPress template.
 
     .. raw:: html
 
@@ -95,11 +100,11 @@ Step 2. Author the template
     **Note**: As you’re authoring, it’s important to check that the template is valid. While ElasticBox validates the correctness of the JSON format and the template syntax correctness, we can’t know whether resources specified are available in your AWS account or whether property values of a resource are valid. For that level of checking, it’s best to test launch the CloudFormation box instance from ElasticBox and refine the template in real-time.
 
 Step 3. Launch the CloudFormation stack
-````````````````````````````````````````````
+```````````````````````````````````````
 
 1. On the box page, click **Deploy**.
 
-2. For Provider, select an AWS cloud account added in ElasticBox.
+2. For Deployment Policy, select an AWS CloudFormation Deployment Policy added in ElasticBox to indicate the location and the availability zone to launch the stack.
 
     .. raw:: html
 
@@ -107,15 +112,13 @@ Step 3. Launch the CloudFormation stack
     		<img class="img-responsive" src="/../assets/img/docs/cloudformation/cloudformation-launchstack-settings.png" alt="Select Deployment Settings">
     	</div>
 
-3. For Region, select the location and availability zone to launch the stack.
+3. Optionally, add tags for `bindings </../documentation/configuring-and-managing-boxes/template-box/#connect-to-other-cloudformation-boxes-over-bindings/>`_, `auto schedule the instance </../documentation/deploying-and-managing-instances/deploying-managing-instances/#instance-scheduler>`_, and set `auto updates </../documentation/core-concepts/boxes/#box-metadata>`_.
 
-4. Optionally, add tags, `auto schedule the instance </../documentation/deploying-and-managing-instances/deploying-managing-instances/#instance-scheduler>`_, and set `auto updates </../documentation/core-concepts/boxes/#box-metadata>`_.
+4. Under Variables, set values for each parameter based on the **AllowedValues** property in the template parameters section.
 
-5. Under Variables, set values for each parameter based on the **AllowedValues** property in the template parameters section.
+5. Click **Deploy** to launch the stack.
 
-6. Click **Deploy** to launch the stack.
-
-    **Note**: When launched successfully, outputs for the stack are available in the instance lifecycle editor. Click **Lifecycle Editor** on the instance page and look under Outputs.
+    **Note**: When launched successfully, website URL is available in the instance lifecycle editor. Click **Lifecycle Editor** on the instance page and look under WebsiteURL.
 
     .. raw:: html
 
@@ -124,7 +127,7 @@ Step 3. Launch the CloudFormation stack
     	</div>
 
 Update a CloudFormation Stack in Real-Time
--------------------------------------------------------
+------------------------------------------
 
 Once live, you can continue to make changes to your CloudFormation template from the instance lifecycle editor and test in real-time. Follow these steps.
 
@@ -139,16 +142,7 @@ Once live, you can continue to make changes to your CloudFormation template from
     .. raw:: html
 
     	<div class="doc-image padding-1x">
-          <div class="browser-feature">
-            <div class="indicators">
-                <div class="circle magenta"></div>
-                <div class="circle orange"></div>
-                <div class="circle green"></div>
-              </div>
-              <div class="browser-window">
-                <img class="img-responsive" src="/../assets/img/docs/cloudformation/cloudformation-stack-update.png" alt="Update the CloudFormation Stack in the Lifecycle Editor">
-              </div>
-          </div>
+            <img class="img-responsive" src="/../assets/img/docs/cloudformation/cloudformation-stack-update.png" alt="Update the CloudFormation Stack in the Lifecycle Editor">
         </div>
 
 4. Update the template and test launch the stack. You can change any section of the template or rewrite it entirely. When ready to update the stack in AWS, click **Reconfigure**. In this example, we increased the RDS database size by changing the value of the DBAllocatedStorage parameter.
@@ -156,19 +150,10 @@ Once live, you can continue to make changes to your CloudFormation template from
     .. raw:: html
 
     	<div class="doc-image padding-1x">
-          <div class="browser-feature">
-            <div class="indicators">
-                <div class="circle magenta"></div>
-                <div class="circle orange"></div>
-                <div class="circle green"></div>
-              </div>
-              <div class="browser-window">
-                <img class="img-responsive" src="/../assets/img/docs/cloudformation/cloudformation-stack-updatewithreconfigure.png" alt="Update the CloudFormation Stack in Real-Time with Reconfigure">
-              </div>
-          </div>
+            <img class="img-responsive" src="/../assets/img/docs/cloudformation/cloudformation-stack-updatewithreconfigure.png" alt="Update the CloudFormation Stack in Real-Time with Reconfigure">
         </div>
 
-5. (Optional) Push updates back to the CloudFormation box. When you're satisfied changing and testing the template in the instance, you can push it back to the CloudFormation box as a version. To do this, click the up arrow icon under Variables. This allows you or others in the future to choose a version that best suits your deployment.
+5. (Optional) Push updates back to the CloudFormation box. When you're satisfied changing and testing the template in the instance, you can push it back to the CloudFormation box as a version. To do this, click **New** under Versions tabs. This allows you or others in the future to choose a version that best suits your deployment.
 
      .. raw:: html
 
@@ -177,35 +162,24 @@ Once live, you can continue to make changes to your CloudFormation template from
     	</div>
 
 Connect to Other CloudFormation Boxes over Bindings
--------------------------------------------------------
+---------------------------------------------------
 
 Large CloudFormation deployments are challenging to manage in a single template. To simplify, break the template into smaller, manageable CloudFormation boxes and connect them with `bindings </../documentation/configuring-and-managing-boxes/managing-multi-tier-applications/>`_. Then use `text expressions </../documentation/configuring-and-managing-boxes/parameterizing-boxes-with-variables/#box-creating-texttype>`_ to call the bindings. When you do, they're added to the parameter section of the template. At deploy time, the CloudFormation service calls the binding to connect and pass values between boxes.
 
-TTo illustrate, we create a second CloudFormation box to scale the WordPress blog instance automatically when past its load limit. In the following steps, we add a binding and call it to connect the WordPress box to the autoscaling box.
+To illustrate, we create a second CloudFormation box to scale the WordPress blog instance automatically when past its load limit. In the following steps, we add a binding and call it to connect the WordPress box to the autoscaling box.
 
 **Steps**
 
-1. Create a CloudFormation box using the `AWS autoscaling template <https://s3-us-west-2.amazonaws.com/cloudformation-templates-us-west-2/AutoScalingMultiAZWithNotifications.template>`_.
+1. Create a CloudFormation box using the `AWS autoscaling template <https://s3-us-west-2.amazonaws.com/cloudformation-templates-us-west-2/AutoScalingMultiAZWithNotifications.template>`_ and deploy it.
 
     .. raw:: html
 
     	<div class="doc-image padding-1x">
-          <div class="browser-feature">
-            <div class="indicators">
-                <div class="circle magenta"></div>
-                <div class="circle orange"></div>
-                <div class="circle green"></div>
-              </div>
-              <div class="browser-window">
-                <img class="img-responsive" src="/../assets/img/docs/cloudformation/cloudformation-bindings-createautoscalingbox.png" alt="Create a Autoscaling CloudFormation Box">
-              </div>
-          </div>
+            <img class="img-responsive" src="/../assets/img/docs/cloudformation/cloudformation-bindings-createautoscalingbox.png" alt="Create a Autoscaling CloudFormation Box">
         </div>
 
 
 2. Go to the WordPress box and add a binding to the Autoscaling box.
-
-    Make the binding required to make sure you always bind to an autoscaled instance before deploying WordPress.
 
       .. raw:: html
 
@@ -213,9 +187,25 @@ TTo illustrate, we create a second CloudFormation box to scale the WordPress blo
       		<img class="img-responsive" src="/../assets/img/docs/cloudformation/cloudformation-bindings-createbindingvar.png" alt="Create a binding in the CloudFormation Box">
       	</div>
 
-3. In the WordPress box, specify a connection string to activate the binding.
+3. When the WordPress box is deployed, the autoscalebinding variable must be matched with the Autoscaling Instance.
 
-    Under Variables, click **New** and select the text expression variable type. Enter this connection string: {{ autoscalebinding.address }}
+      .. raw:: html
+
+      	<div class="doc-image padding-1x">
+      		<img class="img-responsive" src="/../assets/img/docs/cloudformation/cloudformation-bindings-deploybindingvar.png" alt="Match with the Autoscaling Instance">
+      	</div>
+
+4. The relationship created by the binding is showed in the grid view.
+
+      .. raw:: html
+
+      	<div class="doc-image padding-1x">
+      		<img class="img-responsive" src="/../assets/img/docs/cloudformation/cloudformation-bindings-gridview.png" alt="Grid view instances">
+      	</div>
+
+If some value of the binding is used in the WordPress box configuration, a text expression variable type must be created.
+
+    Under Variables, click **New** and select the text expression variable type.
 
       .. raw:: html
 
@@ -225,4 +215,4 @@ TTo illustrate, we create a second CloudFormation box to scale the WordPress blo
 
     The expression can contain any string value or variables from templates. It can also contain system variables like instance, username, addresses. In general, follow this syntax: {{ binding_name.variable_name }}
 
-When you next launch the WordPress box, its instance automatically connects to an Autoscaling instance over the binding.
+

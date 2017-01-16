@@ -1,5 +1,5 @@
 Deployment Policy Boxes
-********************************
+***********************
 
 Give access to cloud provider infrastructure using a deployment policy box. Policies help allocate cloud resources securely rather than giving access to the entire cloud provider. As IT operations, you have control over what and how much resources deployments consume. Customize policies to support specific deployment scenarios. For example, you may want to provide a small instance type of a certain Linux distribution in a policy to launch development environments.
 
@@ -10,9 +10,17 @@ Give access to cloud provider infrastructure using a deployment policy box. Poli
 * `Control box deployments with admin boxes`_
 
 Create a Deployment Policy
--------------------------------
+--------------------------
 
-On the Boxes page, click **New** > **Deployment Policy**. Here select a cloud provider added in ElasticBox and optionally add `claim tags </../documentation/core-concepts/boxes/#box-metadata>`_. Save to continue.
+On the Boxes page, click **New** > **Deployment Policy**. Here select a type of deployment policy box
+
+.. raw:: html
+
+	<div class="doc-image padding-1x">
+		<img class="img-responsive" src="/../assets/img/docs/boxes/policybox-type.png" alt="Select a Type of Deployment Policy">
+	</div>
+
+The next step is to select a cloud provider added in ElasticBox and optionally add `claim tags </../documentation/core-concepts/boxes/#box-metadata>`_. Save to continue.
 
 .. raw:: html
 
@@ -41,23 +49,23 @@ Click **Edit** to customize the policy. Select the resource, network, and other 
 * `SoftLayer </../documentation/deploying-and-managing-instances/using-softlayer/#softlayer-deploy>`_
 
 Give Access to the Policy
--------------------------------
+-------------------------
 
-Once you set up the policy, give team workspaces and individuals access to cloud resources for their box deployments. Click **Share** in the deployment policy box to give view, edit, or owner access.
+Once you set up the policy, give team workspaces and individuals access to cloud resources for their box deployments. Click on the pencil of the **Collaborators** in the **Overwiew** tab of the deployment policy box, search the users and give them view, edit, or owner access.
 
-* Owner. Rename or delete the policy metadata and edit the policy settings if you have edit access to the provider registered in ElasticBox.
+* Is Owner. Rename or delete the policy metadata and edit the policy settings if you have edit access to the provider registered in ElasticBox.
 
-* Edit. Change the policy box metadata and edit the policy settings if you have edit access to the provider.
+* Can Edit. Change the policy box metadata and edit the policy settings if you have edit access to the provider.
 
-* View. Consume the policy to deploy boxes.
+* Can View. Consume the policy to deploy boxes.
 
 Control Box Deployments with Admin Boxes
-------------------------------------------
+----------------------------------------
 
 Any script box attached to a deployment policy is an admin box. The admin box allows enterprise IT operations teams to run common admin tasks in deployments to comply with company policies and best practices. Such common admin tasks can include installing monitoring agents, registering virtual machines in a database, or setting up public keys on all machines before making them available to users.
 
 Admin box use cases
-```````````````````````
+```````````````````
 
 Admin boxes are useful in these deployment scenarios:
 
@@ -70,7 +78,7 @@ Admin boxes are useful in these deployment scenarios:
 * **Install certificates**. An admin can install certificates locally on every virtual machine in production as a simple example.
 
 Creating and executing an admin box
-``````````````````````````````````````
+```````````````````````````````````
 
 To create an admin box, open a deployment policy and add a script box under Variables. Typically, you want to add a script box that matches the policy OS type. In a Windows policy for example, add a script box that runs on Windows. A policy can have as many admin boxes as needed.
 

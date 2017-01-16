@@ -34,7 +34,7 @@ Contents:
       Script Box <configuring-and-managing-boxes/script-box.rst>
       Deployment Policy Box <configuring-and-managing-boxes/deploymentpolicy-box.rst>
       Application Box <configuring-and-managing-boxes/application-box.rst>
-      CloudFormation Box <configuring-and-managing-boxes/cloudformation-box.rst>
+      Template Box <configuring-and-managing-boxes/template-box.rst>
       Docker Containers <configuring-and-managing-boxes/docker-container-service.rst>
       Parameterizing with Variables <configuring-and-managing-boxes/parameterizing-boxes-with-variables.rst>
       Jinja Templating for Variables <configuring-and-managing-boxes/syntax-for-variables.rst>
