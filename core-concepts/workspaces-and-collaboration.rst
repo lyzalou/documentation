@@ -1,5 +1,5 @@
-Workspaces & Sharing
-********************************
+Workspaces, Cost Centers, Organizations and Sharing
+****************************************************
 
 **In this article:**
 
@@ -12,60 +12,133 @@ Overview
 
 In ElasticBox, boxes let you deliver applications predictably. Sharing enables others to reuse your box configuration or work collaboratively to build better applications.
 
-ElasticBox lets you share three types of assets: boxes, instances, and providers. You decide the level of access that works best when you share. Share with users or with workspaces and give them view or edit access. When you share with a workspace, all workspace members get equal access to an asset.
+ElasticBox lets you share three types of assets: boxes, instances, and providers. You decide the level of access that works best when you share. Share with users or with workspaces and give them view or edit access.
 
-A workspace is a shared environment in which members of that workspace can access the same providers, boxes, and instances. When you first sign in to ElasticBox, you only have a personal workspace called My Workspace. After that, you can create your own workspaces or be invited to others’. Workspaces are contextual. When you switch workspaces you see a whole different group of instances, boxes, and providers, which belong only to that workspace.
+In ElasticBox, you can organize users to grant them access to several assets at the same time. Users might be members of Workspaces, Cost Centers and Organizations.
 
-**Example**
+When you first sign in to ElasticBox, you only have a personal workspace called My Workspace. After that you can be invited as member to other Workspaces, Cost Centers or Organizations.
 
-Say you have a Jenkins box that integrates and stages code for testing. You want to collaborate with other Jenkins experts to make the box configuration highly usable. So you give their workspace edit access. Next, the QA team needs this box to deploy and run tests, so you give their workspace view access. Now the QA team can deploy Jenkins instances, but as you'd expect, they aren't allowed to change the underlying Jenkins box definition.
+Workspaces
+-----------------------
 
-Creating and Adding Members to Workspaces
--------------------------------------------
+Workspaces are the most common way to have users collaborating on a set of instances, boxes and providers.
 
-To create a workspace click **New Workspace**.
+To have instances, boxes or providers available in a workspaces, create them inside it or share them with the workspace with the appropriate level of permission.
+
+At the same time, workspaces have members. The members of the workspaces are users or groups of users (for example, LDAP Groups).
+
+Each member can have a level of permission that will allow him to see different assets in the workspace.
+
+The different levels are:
+
+1. **Visitor:**  A visitor member can see instances and boxes, but he cannot edit them or see providers. Use this role to monitor share what is happening on a workspace without worrying about the user potentially breaking something.
+
+2. **User:** An user member can see and edit instances, see boxes, but he cannot see providers. He is allowed to deploy instances. Use this role for people who will apply fixes and who need to deploy instances but shouldn’t edit boxes without supervision. For example, developers can user the User rights to deploy testing environments.
+
+3. **Author:** An author member can see and edit instances and boxes, and see providers. He cannot edit a provider but he can author new policy boxes. This is a common role for people who is creating boxes and managing an environment, but shouldn’t be changing the credential or adding new members.
+
+4. **Administrator:** An administrator member can see and edit instances, boxes and providers. In addition, he can change permission of other members and other settings. He has the highest permissions of all members. Use this for team leaders of the workspace.
+
+If your organization is federated to other organizations, you can share the workspace with other organizations. When you federate a workspace, administrators of the other organization can access the workspace and you can add members of the other organization to the workspace. This is useful to get support from the ElasticBox team, you can federate a workspace with us to give us access to the assets to diagnose a support ticket.
+
+If you want to use this feature in different ways, please `contact us`_.
+
+.. _contact us: support@elasticbox.com
+
+Cost Center
+-----------------------
+
+All workspaces belong to a Cost Center that is assigned when it’s created.
+
+Being a member of a Cost Center allows you to manage all assets of all the workspaces belonging to it as is you were an Administrator of those workspaces.
+
+In addition to that, a Cost Center member can create new and delete workspaces inside the Cost Center.
+
+Users who manage a big team or several project are usually Cost Center administrators. The ability to create workspaces make Cost Center members able to organize the users and assets and keep the big picture of how things are organized.
+
+Organizations
+-----------------------
+
+All Cost Centers and Workspaces belong to an Organization.
+
+The administrators of an Organization can change many settings that affect the whole organizations. See more details `here </../documentation/managing-your-organization/admin-overview/>`_.
+
+Switching and Managing Workspaces, Cost Centers and Organizations
+-------------------------------------------------------------------
+
+You can use the switcher in the top of the screen to access different Workspaces, Cost Centers and Organizations to which you have access.
+
+This allows you to filter and search for the right scope to the work you need to do. The Instances, Boxes and Providers available to you will change to reflect the selected scope. For example, if you select a Cost Center, you can see all Instances, Boxes and Providers that are in Workspaces belonging to that Cost Center.
+
+**Workspace Switcher - Workspace view**
 
 .. raw:: html
 
 	<div class="doc-image padding-1x">
-		<img class="img-responsive" src="/../assets/img/docs/workspaces/workspaces-list-new.png" alt="Create a New Workspace">
+		<img class="img-responsive" src="/../assets/img/docs/workspaces/workspace-view.png" alt="Workspace View">
 	</div>
 
-This brings up the New Workspace dialog. Here you can upload an icon for the new workspace, give it a name, and add users. To add users just start to type the name of the user in the Members field. ElasticBox generates a list based on a match of the text.
+**Workspace Switcher - Cost Center View**
 
 .. raw:: html
 
 	<div class="doc-image padding-1x">
-		<img class="img-responsive" src="/../assets/img/docs/workspaces/workspace-new.png" alt="Add Members to a Workspace">
+		<img class="img-responsive" src="/../assets/img/docs/workspaces/cost-center-view.png" alt="Cost Center View">
 	</div>
 
-When you add a user, they automatically get access to the workspace and any assets it contains, such as providers, boxes, and instances.
-
-Managing Workspaces
-```````````````````````
-
-When you create a workspace, you are its owner and as such you can edit and manage it.
-
-To edit a workspace you created, click the pencil icon for the workspace.
+**Workspace Switcher - Organization view**
 
 .. raw:: html
 
 	<div class="doc-image padding-1x">
-		<img class="img-responsive" src="/../assets/img/docs/workspaces/workspaces-list-edit.png" alt="Edit Your Workspace">
+		<img class="img-responsive" src="/../assets/img/docs/workspaces/organization-view.png" alt="Organization View">
 	</div>
 
-In this dialog, you can add and remove users as well as delete the workspace.
+The switcher also offer the option to create Workspaces and Cost Centers.
+
+Create Workspace flow
+-----------------------
+
+Create workspace flow will ask users to select the Cost Center the workspace belongs to. Once created, the Cost Center cannot be changed.
 
 .. raw:: html
 
 	<div class="doc-image padding-1x">
-		<img class="img-responsive" src="/../assets/img/docs/workspaces/workspaces-edit.png" alt="Manage Your Workspace">
+		<img class="img-responsive" src="/../assets/img/docs/workspaces/new-workspace.png" alt="Create a New Workspace">
+	</div>
+
+Create Cost Center flow
+-------------------------
+
+Create Cost Center flow will ask users to select the Organization the Cost Center belongs to. It will usually be only one organization to select. Once created, the Cost Center cannot change Organization.
+
+.. raw:: html
+
+	<div class="doc-image padding-1x">
+		<img class="img-responsive" src="/../assets/img/docs/workspaces/new-cost-center.png" alt="Create a New Cost Center">
 	</div>
 
 Sharing Boxes, Instances, and Providers
--------------------------------------------
+-----------------------------------------
 
-When you create a box, launch an instance, or add a provider you own the asset by default. You can control how others use it by giving them view or edit access. Edit access gives users the same level of access as the owner. Only, they can’t delete the asset.
+Sharing
+``````````
+When you create a box, launch an instance, or add a provider, they are created in the Workspace that you have selected in the Workspace Switcher. You can control how others use it by giving them view or edit access. Edit access gives users the same level of access as the owner but they cannot delete the asset.
+
+When you share with a user, the asset will appear in his personal workspace with the permission given.
+
+If you decide to share with a team workspace, all the users on the workspace with the right permissions will be able to access the asset.
+
+When you share with a Workspace, all workspace members get access according to their role.
+
+A workspace is a shared environment in which members of that workspace can access the same providers, boxes, and instances. Workspaces are contextual. When you switch workspaces you see a whole different group of instances, boxes, and providers, which belong only to that workspace.
+
+Example
+`````````
+
+Say you have a Jenkins box that integrates and stages code for testing. You want to collaborate with other Jenkins experts to make the box configuration highly usable. So you give their workspace edit access. Next, the QA team needs this box to deploy and run tests, so you give their workspace view access. Now the QA team can deploy Jenkins instances, but as you’d expect, they aren’t allowed to change the underlying Jenkins box definition.
+
+Notice that providers and policy boxes cannot be shared with workspaces that are not in the same Cost Center.
 
 Steps
 ```````````````````````
@@ -75,7 +148,7 @@ Steps
 	.. raw:: html
 
 		<div class="doc-image padding-1x">
-			<img class="img-responsive" src="/../assets/img/docs/sharing/sharing-howtoshareboxesinstancesproviders.png" alt="Start Sharing a Box, Instance, or Provider">
+			<img class="img-responsive" src="/../assets/img/docs/sharing/share-step-1.png" alt="Start Sharing a Box, Instance, or Provider">
 		</div>
 
 2. In the sharing dialog, type the name of the users or workspaces you want to share with and select them.
@@ -83,7 +156,7 @@ Steps
 	.. raw:: html
 
 		<div class="doc-image padding-1x">
-			<img class="img-responsive" src="/../assets/img/docs/sharing/sharing-adduserstosharewith.png" alt="Add Users or Workspaces You Want to Share with">
+			<img class="img-responsive" src="/../assets/img/docs/sharing/share-step-2.png" alt="Add Users or Workspaces You Want to Share with">
 		</div>
 
 3. For each user or workspace that you added, give view or edit access. They get edit access by default.
@@ -91,7 +164,7 @@ Steps
 	.. raw:: html
 
 		<div class="doc-image padding-1x">
-			<img class="img-responsive" src="/../assets/img/docs/sharing/sharing-givevieworeditaccess.png" alt="Give View or Edit Access">
+			<img class="img-responsive" src="/../assets/img/docs/sharing/share-step-3.png" alt="Give View or Edit Access">
 		</div>
 
 Stop Sharing
@@ -102,7 +175,7 @@ To discontinue sharing with a user or workspace, open the sharing dialog, and re
 .. raw:: html
 
 	<div class="doc-image padding-1x">
-		<img class="img-responsive" src="/../assets/img/docs/sharing/sharing-stopsharing.png" alt="Stop Sharing with a User or Workspace">
+		<img class="img-responsive" src="/../assets/img/docs/sharing/stop-sharing.png" alt="Stop Sharing with a User or Workspace">
 	</div>
 
 Transfer Ownership
@@ -113,7 +186,7 @@ Sometimes, because your role in the organization changes, you may want to transf
 .. raw:: html
 
 	<div class="doc-image padding-1x">
-		<img class="img-responsive" src="/../assets/img/docs/sharing/sharing-transferownership.png" alt="Transfer Ownership of an Asset">
+		<img class="img-responsive" src="/../assets/img/docs/sharing/transfer-ownership.png" alt="Transfer Ownership of an Asset">
 	</div>
 
 Sharing Boxes
@@ -141,4 +214,3 @@ Sharing Providers
 ```````````````````````
 
 Sharing providers has its benefits. You can give view access to company-approved providers and let users deploy to that particular provider. When teams deploy to a shared provider, you can track org-wide usage and compliance cohesively. Provider accounts can be shared only in the Enterprise Edition.
-
