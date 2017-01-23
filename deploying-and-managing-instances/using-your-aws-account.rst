@@ -632,7 +632,7 @@ If you have an existing AWS provider in ElasticBox
 
 The next time you click on sync, ElasticBox will auto-discover those instances that exist in AWS EC2 but have not been provisioned using ElasticBox and save them in the Unregistered instances tab under the Provider details. You can follow the on-screen instructions to register them in ElasticBox.
 
-To register AWS EC2 instance, an additional step is required. ElasticBox use UserData to install the ElasticBox agent on provision time. Since the instance was initially provisioned outside of ElasticBox, users have to execute a script to install the ElasticBox agent.
+To register AWS EC2 instance, an additional step is required. ElasticBox uses UserData to install the ElasticBox agent on provision time. Since the instance was initially provisioned outside of ElasticBox, users have to execute a script to install the ElasticBox agent.
 
 Auto-discover and register AWS EC2 instances in ElasticBox
 ````````````````````````````````````````````````````````````
