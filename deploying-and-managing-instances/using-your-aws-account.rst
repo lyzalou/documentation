@@ -14,6 +14,7 @@ We orchestrate with AWS APIs in the backend to provision, install, and manage th
 * `Connect your AWS account in ElasticBox`_
 * `Add custom AMIs in ElasticBox`_
 * `Deploy to Your AWS Account`_
+* `Auto-Discover Instances`_
 
 Connect Your AWS Account in ElasticBox
 --------------------------------------
@@ -615,3 +616,55 @@ Refer to these options to configure a memcached service through ElasticBox. We s
 | Automatic Backups         | Customize a preferred window for AWS to take automatic daily backups of your memcached instance. If you don’t turn this on, by       |
 |                           | default, AWS backs up your data for a day. This is also where you tell AWS when to perform weekly maintenance.                       |
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+
+Auto-Discover Instances
+-------------------------------
+
+ElasticBox can auto-discover your existing AWS EC2 instances that have been provisioned directly using the provider console outside of ElasticBox. With this capability, even if some of your teams are using AWS EC2 Console to provision instances, you can import them into ElasticBox and manage their lifecycle and also view them as part of the Admin Console Cloud Reports. The discovered instances will exist only as an instance. ElasticBox does not create a corresponding Deployment Policy as part of registration process.
+
+When you add AWS as provider for the first time
+``````````````````````````````````````````````````
+
+As soon as you add AWS as providers in your workspace, ElasticBox will auto-discover those instances that exist in AWS and save them in the Unregistered instances tab under the Provider details. You can follow the on-screen instructions to register them in ElasticBox.
+
+If you have an existing AWS provider in ElasticBox
+`````````````````````````````````````````````````````
+
+The next time you click on sync, ElasticBox will auto-discover those instances that exist in AWS EC2 but have not been provisioned using ElasticBox and save them in the Unregistered instances tab under the Provider details. You can follow the on-screen instructions to register them in ElasticBox.
+
+To register AWS EC2 instance, an additional step is required. ElasticBox uses UserData to install the ElasticBox agent on provision time. Since the instance was initially provisioned outside of ElasticBox, users have to execute a script to install the ElasticBox agent.
+
+Auto-discover and register AWS EC2 instances in ElasticBox
+````````````````````````````````````````````````````````````
+
+**Steps**
+
+1. .. raw:: html
+
+	<div class="doc-image padding-1x">
+		<img alt="Auto-discover AWS EC2 instances" class="img-responsive" src="/../assets/img/docs/providers/auto-discover-ec2-instances.png">
+	</div>
+
+2. .. raw:: html
+
+	<div class="doc-image padding-1x">
+		<img alt="Register AWS EC2 instance" class="img-responsive" src="/../assets/img/docs/providers/register-ec2-instance.png">
+	</div>
+
+3. .. raw:: html
+
+	<div class="doc-image padding-1x">
+		<img alt="Registering AWS EC2 instance" class="img-responsive" src="/../assets/img/docs/providers/registering-ec2-instance.png">
+	</div>
+
+4. .. raw:: html
+
+	<div class="doc-image padding-1x">
+		<img alt="EC2 install agent in console" class="img-responsive" src="/../assets/img/docs/providers/ec2-install-agent-console.png">
+	</div>
+
+5. .. raw:: html
+
+	<div class="doc-image padding-1x">
+		<img alt="EC2 install agent in console" class="img-responsive" src="/../assets/img/docs/providers/ec2-installing-agent.png">
+	</div>
