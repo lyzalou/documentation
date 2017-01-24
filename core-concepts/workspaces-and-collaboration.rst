@@ -4,7 +4,12 @@ Workspaces, Cost Centers, Organizations and Sharing
 **In this article:**
 
 * `Overview`_
-* `Creating and adding members to workspaces`_
+* `Workspaces`_
+* `Cost Center`_
+* `Organizations`_
+* `Switching and Managing Workspaces, Cost Centers and Organizations`_
+* `Create Workspace flow`_
+* `Create Cost Center flow`_
 * `Sharing Boxes, Instances, and Providers`_
 
 Overview
