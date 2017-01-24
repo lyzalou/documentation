@@ -21,9 +21,11 @@ You need an Azure subscription to be able to consume Azure services. Follow thes
 
 **Steps**
 
-1. Sign in to your Windows Live admin `account <https://account.windowsazure.com/Subscriptions>`_.
+1. Sign in to your `account <https://portal.azure.com/>`_.
 
-2. Click add subscription.
+2. Open Subscriptions.
+
+3. Click add subscription.
 
     .. raw:: html
 
@@ -31,7 +33,7 @@ You need an Azure subscription to be able to consume Azure services. Follow thes
             <img class="img-responsive" src="/../assets/img/docs/providers/azure-add-new-subscription.png" alt="Add a New Azure Subscription">
         </div>
 
-3. You can use the free trial version or select and purchase a payment plan.
+4. You can use the free trial version or select and purchase a payment plan.
 
     **Note**: ElasticBox is not responsible for any costs incurred through deploying to Azure. For more information, see `Azure pricing <http://azure.microsoft.com/en-us/pricing/calculator/?scenario=virtual-machines>`_.
 
