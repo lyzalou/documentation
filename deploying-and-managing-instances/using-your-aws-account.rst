@@ -1,11 +1,11 @@
 Using AWS
-********************************
+*********
 
 Deploy to AWS from ElasticBox as follows.
 
 * For `EC2 (Linux and Windows)`_ use `deployment policies </../documentation/configuring-and-managing-boxes/deploymentpolicy-box/>`_. Select a policy when you launch workloads from boxes.
 * For `AWS RDS`_, `AWS S3`_, `AWS DynamoDB`_, and `AWS Memcached`_, use readymade CloudFormation boxes.
-* For any other AWS service, configure a custom `CloudFormation box </../documentation/configuring-and-managing-boxes/cloudformation-box/>`_.
+* For any other AWS service, configure a custom `CloudFormation box </../documentation/configuring-and-managing-boxes/template-box/#cloudformation-box/>`_.
 
 We orchestrate with AWS APIs in the backend to provision, install, and manage the lifecyle of your workloads based on the box configuration.
 
@@ -16,7 +16,7 @@ We orchestrate with AWS APIs in the backend to provision, install, and manage th
 * `Deploy to Your AWS Account`_
 
 Connect Your AWS Account in ElasticBox
--------------------------------------------
+--------------------------------------
 
 Before you deploy in AWS, you need to connect your AWS account in ElasticBox. Watch this video for details.
 
@@ -190,7 +190,7 @@ Before you deploy in AWS, you need to connect your AWS account in ElasticBox. Wa
 	**Important: If you use ElasticBox as an appliance, connect to your AWS account using the secret and key credentials.**
 
 Add Custom AMIs in ElasticBox
---------------------------------
+-----------------------------
 
 By default, ElasticBox makes the latest AWS Linux and Windows AMIs along with any custom AMIs available in your AWS account. You can add others by clicking **New** and entering the AMI number.
 
@@ -203,7 +203,7 @@ By default, ElasticBox makes the latest AWS Linux and Windows AMIs along with an
 **Note**: For this to work you may have go to the AWS marketplace and accept the license agreement for that AMI. Although most AMIs come pre-installed with `cloud-init <http://cloudinit.readthedocs.org/en/latest/>`_, some may not, in which case you must install it. ElasticBox requires cloud-init to bootstrap the ElasticBox agent.
 
 Deploy to Your AWS Account
---------------------------------
+--------------------------
 
 When you deploy a box, we show `deployment policies </../../documentation/configuring-and-managing-boxes/deploymentpolicy-box/>`_ whose claims match the required tags of the box.
 
@@ -215,12 +215,12 @@ RDS, S3, DynamoDB, and Memcached are CloudFormation boxes. To deploy to an RDS s
 * `AWS S3`_
 * `AWS DynamoDB`_
 * `AWS Memcached`_
-* `AWS CloudFormation </../../documentation/configuring-and-managing-boxes/cloudformation-box>`_
+* `AWS CloudFormation </../../documentation/configuring-and-managing-boxes/template-box/#cloudformation-box>`_
 
 **Note**: If your AWS account has new AMIs, key pairs, security groups, and the like, you must sync with the AWS account in ElasticBox to pick up all the changes.
 
 EC2 (Linux and Windows)
-----------------------------
+-----------------------
 
 To deploy workloads to an EC2 instance, create a `deployment policy </../../documentation/configuring-and-managing-boxes/deploymentpolicy-box/>`_ for an AWS account or use the one your admin shared with you.
 
@@ -352,7 +352,7 @@ When deploying via AWS, we register the instance to the load balancer and automa
 **Note**: Since you more frequently update or replace applications than load balancers, we recommend you reuse existing load balancers in production environments. This will help retain DNS settings that forward traffic to the instance.
 
 AWS ECS
-------------
+-------
 
 To deploy workloads to an ECS instances:
 
@@ -360,10 +360,10 @@ To deploy workloads to an ECS instances:
 * `Image Lifecycle`_
 * `Deploy the Instance`_
 
-Note: This documentation assumes that you have an ECS cluster already deployed in your AWS account. If you don’t have one, you can deploy a `CloudFormation Box </../documentation/configuring-and-managing-boxes/cloudformation-box/>`_ using this `CloudFormation template <http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/quickref-ecs.html>`_ as blueprint. After the instance is deployed, don’t forget to synchronize the provider in order to fetch the latest changes.
+Note: This documentation assumes that you have an ECS cluster already deployed in your AWS account. If you don’t have one, you can deploy a `CloudFormation Box </../documentation/configuring-and-managing-boxes/template-box/#cloudformation-box/>`_ using this `CloudFormation template <http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/quickref-ecs.html>`_ as blueprint. After the instance is deployed, don’t forget to synchronize the provider in order to fetch the latest changes.
 
 Deployment Policy
-``````````````````````
+`````````````````
 
 Create a new policy box of type “Amazon EC2 Container Service” or use the one your admin shared with you.
 
@@ -410,10 +410,10 @@ Create a new policy box of type “Amazon EC2 Container Service” or use the on
 +--------------------------------+----------------------------------------------------------------------+
 
 Image Lifecycle
-``````````````````
+```````````````
 
 Build the Image
-```````````````````
+```````````````
 
 Use the ebcli to build the image.
 
@@ -438,7 +438,7 @@ Use the ebcli to build the image.
 +--------------------------------+----------------------------------------------------------------------+
 
 Push the Image
-````````````````
+``````````````
 
 Use the docker client to push the image to your favourite docker registry. If you have questions about this step, check out the official Docker documentation about images.
 
@@ -451,7 +451,7 @@ Use the docker client to push the image to your favourite docker registry. If yo
 	</pre>
 
 Post the Image
-`````````````````
+``````````````
 
 Use the ebcli to post the image to your box
 
@@ -464,14 +464,14 @@ Use the ebcli to post the image to your box
 	</pre>
 
 Deploy the Instance
-```````````````````````
+```````````````````
 
 Deploy the instance as you would do for a regular deployment, but instead, select the previously created deployment profile. The box will be deployed as a container within the ECS cluster selected in the Deployment Policy.
 
 AWS RDS
------------
+-------
 
-In ElasticBox, RDS services are available as CloudFormation boxes. To define an RDS service like MySQL, go to the Boxes page. Click **New** > **CloudFormation**. Under Managed Boxes, select **MySQL Database**. Select an AWS provider account registered in ElasticBox.
+In ElasticBox, RDS services are available as CloudFormation boxes. To define an RDS service like MySQL, go to the Boxes page. Click **New** > **Template Box**. Under Managed Boxes, select **MySQL Database**. Select an AWS provider account registered in ElasticBox.
 
 In the same way, you can define other RDS services like MS SQL, Oracle, or PostgresSQL. Configure the RDS service with these options.
 
@@ -521,9 +521,9 @@ In the same way, you can define other RDS services like MS SQL, Oracle, or Postg
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
 AWS S3
------------
+------
 
-In ElasticBox, S3 is a readymade CloudFormation box. To define an S3 bucket, go to the Boxes page. Click **New** > **CloudFormation**. Under Managed Boxes, select **S3 Bucket**. Select an AWS provider account registered in ElasticBox.
+In ElasticBox, S3 is a readymade CloudFormation box. To define an S3 bucket, go to the Boxes page. Click **New** > **Template Box**. Under Managed Boxes, select **S3 Bucket**. Select an AWS provider account registered in ElasticBox.
 
 Configure the S3 bucket with these options. Select a port (usually 80) through which the storage instance communicates over the network.
 
@@ -543,9 +543,9 @@ Configure the S3 bucket with these options. Select a port (usually 80) through w
 +--------------------------------+----------------------------------------------------------------------+
 
 AWS DynamoDB
-----------------
+------------
 
-In ElasticBox, DynamoDB is a readymade CloudFormation box. To define a DynamoDB service, go to the Boxes page. Click **New** > **CloudFormation**. Under Managed Boxes, select **DynamoDB**. Select an AWS provider account registered in ElasticBox.
+In ElasticBox, DynamoDB is a readymade CloudFormation box. To define a DynamoDB service, go to the Boxes page. Click **New** > **Template Box**. Under Managed Boxes, select **DynamoDB**. Select an AWS provider account registered in ElasticBox.
 
 Configure DynamoDB with these options. Select a port (usually 80) through which the database instance communicates over the network.
 
@@ -571,9 +571,9 @@ Configure DynamoDB with these options. Select a port (usually 80) through which 
 +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
 AWS Memcached
------------------
+-------------
 
-in ElasticBox, memcached is a readymade CloudFormation box. To define a memcached service, go to the Boxes page. Click **New** > **CloudFormation**. Under Managed Boxes, select **Memcached**. Select an AWS provider account registered in ElasticBox.
+in ElasticBox, memcached is a readymade CloudFormation box. To define a memcached service, go to the Boxes page. Click **New** > **Template Box**. Under Managed Boxes, select **Memcached**. Select an AWS provider account registered in ElasticBox.
 
 The memcached box adds in-memory caching for your application. By deploying through ElasticBox an application deployed on another cloud can take advantage of the caching service in AWS ElastiCache. To connect to the memcached service from another application use a binding. You need the cache cluster hostname and port from the binding to connect. When launching, use the default port 11211 or specify another value to allow inbound or outbound calls to the nodes in the cache cluster.
 

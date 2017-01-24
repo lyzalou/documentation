@@ -41,4 +41,4 @@ Deploy to any of the services in the AWS GovCloud region.
 * `AWS RDS </../documentation/deploying-and-managing-instances/using-your-aws-account/#aws-rds>`_
 * `AWS S3 </../documentation/deploying-and-managing-instances/using-your-aws-account/#aws-s3>`_
 * `AWS DynamoDB </../documentation/deploying-and-managing-instances/using-your-aws-account/#aws-dynamodb>`_
-* `AWS CloudFormation </../documentation/configuring-and-managing-boxes/cloudformation-box/>`_
+* `AWS CloudFormation </../documentation/configuring-and-managing-boxes/template-box/#cloudformation-box/>`_

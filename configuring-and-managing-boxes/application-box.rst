@@ -1,7 +1,7 @@
 Application Boxes
-********************************
+*****************
 
-The Application box deploys several instances that execute an application. An application box define a topology of `Script boxes </../documentation/configuring-and-managing-boxes/script-box/>`_, `CloudFormation boxes </../documentation/configuring-and-managing-boxes/cloudformation-box/>`_ and `Container boxes </../documentation/configuring-and-managing-boxes/docker-container-service/>`_
+The Application box deploys several instances that execute an application. An application box define a topology of `Script boxes </../documentation/configuring-and-managing-boxes/script-box/>`_, `Template boxes </../documentation/configuring-and-managing-boxes/template-box/>`_ and `Container boxes </../documentation/configuring-and-managing-boxes/docker-container-service/>`_
 
 **In this article**:
 
@@ -9,7 +9,7 @@ The Application box deploys several instances that execute an application. An ap
 * `Creating application boxes`_
 
 What are application boxes?
--------------------------------
+---------------------------
 
 To deploy most applications, you need several instances cooperating together. Application boxes are a way to define and reuse how several boxes will work together to run an application.
 
@@ -20,22 +20,13 @@ An application box defines a topology. A topology is a list of boxes and all the
 .. raw:: html
 
 	<div class="doc-image padding-1x">
-        <div class="browser-feature">
-          <div class="indicators">
-              <div class="circle magenta"></div>
-              <div class="circle orange"></div>
-              <div class="circle green"></div>
-            </div>
-            <div class="browser-window">
-              <img class="img-responsive" src="/../assets/img/docs/boxes/application-box-multitier-example.png" alt="A multitier application box showing all the boxes in the topology">
-            </div>
-        </div>
-      </div>
+        <img class="img-responsive" src="/../assets/img/docs/boxes/application-box-multitier-example.png" alt="A multitier application box showing all the boxes in the topology">
+    </div>
 
 This makes deploying several instances fast and prevent errors. The instances deployed can be managed separately if needed, allowing you to adapt each running application as needed. Each box in the topology includes the information needed to deploy it as an instance.
 
 Creating application boxes
--------------------------------
+--------------------------
 
 To create an application box just go to the boxes page and click new and select application box. You only need to configure the name of the application box.
 
