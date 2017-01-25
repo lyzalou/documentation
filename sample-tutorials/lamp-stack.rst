@@ -30,7 +30,7 @@ On the Boxes page, click **New** > **Template** and select **MySQL Database**. C
 .. raw:: html
 
 	<div class="doc-image padding-1x">
-    	<img class="img-responsive" src="/../documentation/sample-tutorials/img/Mysqlboxgeneration.png" >
+    	<img class="img-responsive" src="/../assets/img/docs/tutorials/Mysqlboxgeneration.png" alt="Create a Database Box">
     </div>
 
 **Define Policy configuration**
@@ -41,7 +41,7 @@ In the **Code** Tab, edit Policy. Select eu-west-1 as in **Region** combo, under
 .. raw:: html
 
 	<div class="doc-image padding-1x">
-    	<img class="img-responsive" src="/../documentation/sample-tutorials/img/templatePolicyDefinition.png" >
+    	<img class="img-responsive" src="/../assets/img/docs/tutorials/templatePolicyDefinition.png" alt="Define Policy Configuration">
     </div>
 
 **Define the database name, user and password**
@@ -51,7 +51,7 @@ After selecting the new box, in the **Code** Tab on variables you can change the
 .. raw:: html
 
 	<div class="doc-image padding-1x">
-		<img class="img-responsive" src="/../documentation/sample-tutorials/img/boxDatabaseUserPassConfig.png" alt="Create a Database Box">
+		<img class="img-responsive" src="/../assets/img/docs/tutorials/boxDatabaseUserPassConfig.png" alt="Define Database name, user and password">
 	</div>
 
 
@@ -64,7 +64,7 @@ Select default-small-us-east-1 tools and click on **Clone Box**.
 .. raw:: html
 
 	<div class="doc-image padding-1x">
-		<img class="img-responsive" src="/../documentation/sample-tutorials/img/CloneBox.png" height="400">
+		<img class="img-responsive" src="/../assets/img/docs/tutorials/CloneBox.png" height="400" alt="Clone Box">
 	</div>
 
 
@@ -75,7 +75,7 @@ Select the new Box. On **code** tab, edit the policy menu. Define **Region** on 
 .. raw:: html
 
 	<div class="doc-image padding-1x">
-		<img class="img-responsive" src="/../documentation/sample-tutorials/img/policyBoxConfiguration.png" alt="Create a Database Box">
+		<img class="img-responsive" src="/../assets/img/docs/tutorials/policyBoxConfiguration.png" alt="Edit the Policy Box Configuration">
 	</div>
 
 
@@ -89,7 +89,7 @@ On the Boxes page, click **New** > **Script**. Name it LAMP Stack. Since LAMP ne
 .. raw:: html
 
 	<div class="doc-image padding-1x">
-    	<img class="img-responsive" src="/../documentation/sample-tutorials/img/LampBoxCreation.png" alt="Create LAMP box">
+    	<img class="img-responsive" src="/../assets/img/docs/tutorials/LampBoxCreation.png" alt="Create LAMP box">
     </div>
 
 **Step 2. Indicate a relationship to the database tier with a binding.**
@@ -105,7 +105,7 @@ Save when done to create the variable.
 .. raw:: html
 
 	<div class="doc-image padding-1x">
-    	<img class="img-responsive" src="/../documentation/sample-tutorials/img/bindingsql.png" alt="Indicate Database Relationship with a Binding">
+    	<img class="img-responsive" src="/../assets/img/docs/tutorials/bindingsql.png" alt="Indicate Database Relationship with a Binding">
     </div>
 
 **Step 3. Allow traffic to and from the app tier with a port variable.**
@@ -171,16 +171,7 @@ CLONE_URL: **https://github.com/ElasticBox/Easy-PHP-MySQL.git**
 .. raw:: html
 
 	<div class="doc-image padding-1x">
-      <div class="browser-feature">
-        <div class="indicators">
-            <div class="circle magenta"></div>
-            <div class="circle orange"></div>
-            <div class="circle green"></div>
-          </div>
-          <div class="browser-window">
-            <img class="img-responsive" src="/../documentation/sample-tutorials/img/LAMPboxConfig.png" alt="Configure GitHub Box Variables to Download PHP Scripts">
-          </div>
-      </div>
+    	<img class="img-responsive" src="/../assets/img/docs/tutorials/LAMPboxConfig.png" alt="Configure GitHub Box Variables to Download PHP Scripts">
     </div>
 
 	<div class="doc-image padding-1x">
@@ -326,7 +317,7 @@ Before deploying the app tier, you need an active database instance, so launch t
 .. raw:: html
 
 	<div class="doc-image padding-1x">
-		<img class="img-responsive" src="/../documentation/sample-tutorials/img/tagSqlbinding.png" alt="Create an Instance of the Database">
+		<img class="img-responsive" src="/../assets/img/docs/tutorials/tagSqlbinding.png" alt="Create an Instance of the Database">
 	</div>
 
 **Launch the App Tier**
@@ -336,39 +327,5 @@ From the Instances page, click **New** and select the LAMP Stack box. For the de
 .. raw:: html
 
 	<div class="doc-image padding-1x">
-		<img class="img-responsive" src="/../documentation/sample-tutorials/img/lampInstanceBindig.png" alt="Deploy the LAMP Stack App Tier">
+		<img class="img-responsive" src="/../assets/img/docs/tutorials/lampInstanceBindig.png" alt="Deploy the LAMP Stack App Tier">
 	</div>
-
-See how ElasticBox launches the database and the app tiers on separate machines. Once the app tier comes online, you see it connected to the database.
-
-.. raw:: html
-
-	<div class="doc-image padding-1x">
-      <div class="browser-feature">
-        <div class="indicators">
-            <div class="circle magenta"></div>
-            <div class="circle orange"></div>
-            <div class="circle green"></div>
-          </div>
-          <div class="browser-window">
-            <img class="img-responsive" src="/../assets/img/docs/tutorials/lamp-deployedinstance-websiteipaddress-boundinstance.png" alt="Deployed Instance Page Shows the Website IP Address and Bound Database Instance">
-          </div>
-      </div>
-    </div>
-
-You can browse to the application from the IP address on the Endpoints tab to see the results of your hard work.
-
-.. raw:: html
-
-	<div class="doc-image padding-1x">
-      <div class="browser-feature">
-        <div class="indicators">
-            <div class="circle magenta"></div>
-            <div class="circle orange"></div>
-            <div class="circle green"></div>
-          </div>
-          <div class="browser-window">
-            <img class="img-responsive" src="/../assets/img/docs/tutorials/lamp-browsetowebsiteipaddress.png" alt="Browse to the Website IP Address">
-          </div>
-      </div>
-    </div>
