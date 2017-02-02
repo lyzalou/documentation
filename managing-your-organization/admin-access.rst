@@ -6,29 +6,28 @@ When you sign up for the ElasticBox Enterprise Edition, you get a default admini
 **To give admin access**
 
 1. Log in to ElasticBox as the default administrator.
-2. Go to the Admin Console located in menu drop-down at the top right corner of your workspace.
+2. Access to the menu located in the top left, open it and click on **Organizations**.
 
 	.. raw:: html
 
 		<div class="doc-image padding-1x">
-			<div class="browser-feature">
-				<div class="indicators">
-				    <div class="circle magenta"></div>
-				    <div class="circle orange"></div>
-				    <div class="circle green"></div>
-				  </div>
-				  <div class="browser-window">
-				    <img class="img-responsive" src="/../assets/img/docs/adminconsole/admin-console-access-fromworkspace.png" alt="Access the Admin Console from Your Workspace">
-				  </div>
-			</div>
+			<img class="img-responsive" src="/../assets/img/docs/adminconsole/click-organizations.png" alt="Click on Organizations">
 		</div>
 
-3. Under Organization > Administrators, type the user’s name in the search field and select to add them.
+3. Once you are in the Organization scope, you will have access to the **Settings** tab in the principal navigation menu.
 
 	.. raw:: html
 
 		<div class="doc-image padding-1x">
-	    	<img class="img-responsive" src="/../assets/img/docs/adminconsole/admin-console-give-adminaccess.png" alt="Give Users Administrator Privileges">
+			<img class="img-responsive" src="/../assets/img/docs/adminconsole/admin-console-access-from-org.png" alt="Access the Admin Console from Organizations">
+		</div>
+
+4. Under Organization > Administrators, type the user’s name in the search field and select to add them.
+
+	.. raw:: html
+
+		<div class="doc-image padding-1x">
+	    	<img class="img-responsive" src="/../assets/img/docs/adminconsole/admin-console-give-adminaccess-administrators.png" alt="Give Users Administrator Privileges">
 	    </div>
 
 To revoke administrator privileges for a user, click X against their name under Organization > Administrators.

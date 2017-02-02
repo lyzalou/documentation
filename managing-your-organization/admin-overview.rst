@@ -3,42 +3,46 @@ Overview
 
 As an administrator for ElasticBox, you get special privileges. You can access to ElasticBox like any other regular user. On top of that, you get an overview of everything users do in your organization. You get to set it up for them to use and control all assets they create in ElasticBox.
 
-The Admin Console is the interface where you manage and control settings for your organization. Access the console from the top right menu of your workspace after you log in to ElasticBox.
+The Admin Console is the interface where you manage and control settings for your organization. 
 
-.. raw:: html
+**Steps**
 
-	<div class="doc-image padding-1x">
-		<div class="browser-feature">
-			<div class="indicators">
-			    <div class="circle magenta"></div>
-			    <div class="circle orange"></div>
-			    <div class="circle green"></div>
-			  </div>
-			  <div class="browser-window">
-			    <img class="img-responsive" src="/../assets/img/docs/adminconsole/admin-console-access-fromworkspace.png" alt="Access the Admin Console from Your Workspace">
-			  </div>
+1. After you log in to ElasticBox.
+
+2. Access to the context switcher menu, located in the top left navigation bar.
+
+	.. raw:: html
+
+		<div class="doc-image padding-1x">
+			<img class="img-responsive" src="/../assets/img/docs/adminconsole/context-switcher-access.png" alt="Access to the context switcher menu">
 		</div>
-	</div>
 
-The console gives you control in three ways to set up, manage, and monitor:
+3. Click on **Organizations** tab.
 
-* **Setup**. The console is where you set up your organization for everyone to use. This includes things like enabling sign-in options, turning on access to cloud providers, tagging instances users launch, integrating to custom IPAM or CMDB solutions using webhooks, and configuring admin boxes.
-* **Manage**. The console lets you manage users as well as do things on a large scale. You can not only manage settings across the organization, but get visibility into how others consume assets and provider resources across your organization.
-* **Monitor**. Across the organization, the console shows information on how various assets like providers, boxes, instances, and workspaces are being used. You can draw insights based on this information. You can see patterns, trends, and behaviors. This is valuable information to help you make educated decisions to monitor resource usage and improve productivity workflows. That means you can design better ways to bring developers and operations personnel closer together to better deliver applications in your organization.
+	.. raw:: html
 
+		<div class="doc-image padding-1x">
+			<img class="img-responsive" src="/../assets/img/docs/adminconsole/click-organizations.png" alt="Click on Organizations">
+		</div>
 
+	From here, you can get to the Admin Console in two different ways:
 
+		* Clicking on the **edit/pencil button**, located in the top right of the organization card.
 
+		.. raw:: html
 
+			<div class="doc-image padding-1x">
+				<img class="img-responsive" src="/../assets/img/docs/adminconsole/organization-card-edit-button.png" alt="Access the Admin Console clicking on the Edit/pencil button">
+			</div>
 
+		* Once you select the Organization scope, you will have access to the **Settings** tab in the principal navigation menu.
 
+			.. raw:: html
 
+				<div class="doc-image padding-1x">
+					<img class="img-responsive" src="/../assets/img/docs/adminconsole/admin-console-access-clicking-settings.png" alt="Access the Admin Console clicking on settings">
+				</div>
 
+The console allows you to set up organization wide configurations.
 
-
-
-
-
-
-
-
+The console is where you set up your organization for everyone to use. This includes things like enabling sign-in options, turning on access to cloud providers, tagging instances users launch, integrating to custom IPAM or CMDB solutions using webhooks, and configuring admin boxes.
