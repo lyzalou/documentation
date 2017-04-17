@@ -1,5 +1,5 @@
 Boxes
-********************************
+*****
 
 Boxes are the templates that store application automation. An instance is a box you install on virtual infrastructure provisioned to a public, private cloud provider, or your own infrastructure. Take a `quick tour </../../documentation/getting-started/login-and-quick-tour/#tour>`_ to understand the layout of boxes and instances in ElasticBox.
 
@@ -12,10 +12,10 @@ So how do boxes work? A typical application stack may consist of multiple boxes,
 * `Understanding box basics`_
 
 Understanding Box Basics
----------------------------
+------------------------
 
 New Box
-```````````````````````
+```````
 
 To create a new one, click **New**. Select a box type to match your automation:
 
@@ -25,7 +25,7 @@ To create a new one, click **New**. Select a box type to match your automation:
 
 * `Application </../documentation/configuring-and-managing-boxes/application-box/>`_. To configure several boxes to deploy an application with a single click.
 
-* `CloudFormation </../documentation/configuring-and-managing-boxes/cloudformation-box/>`_. To automate using AWS CloudFormation templates.
+* `Template </../documentation/configuring-and-managing-boxes/template-box/>`_. To automate using AWS CloudFormation templates or ARM templates.
 
 * `Container </../documentation/configuring-and-managing-boxes/docker-container-service/>`_. To automate using container technology like Docker.
 
@@ -35,7 +35,7 @@ Give it a name, optionally a description, and define some basic metadata:
 | Metadata         | Box Type        | What it means                                           |
 +==================+=================+=========================================================+
 |Requirements      | Script,         | It's good practice to tag the runtime that the box      |
-|                  | CloudFormation, | requires to deploy. ElasticBox auto suggests tags like  | 
+|                  | Template,       | requires to deploy. ElasticBox auto suggests tags like  |
 |                  | Container       | Linux, Ubuntu, Java and so on. When ready to launch     |
 |                  |                 | the box, you are presented with deployment policies     |
 |                  |                 | that match the requirements. These deployment           |
@@ -46,7 +46,7 @@ Give it a name, optionally a description, and define some basic metadata:
 |                  |                 | instances for bindings.                                 |
 +------------------+-----------------+---------------------------------------------------------+
 |Automatic         | Script,         | Select the level of updates to automatically apply to   |
-|Updates           | CloudFormation, | instances you launch of a box version:                  |
+|Updates           | Template,       | instances you launch of a box version:                  |
 |                  | Container       |                                                         |
 |                  |                 | * **Off**. It's turned off by default.                  |
 |                  |                 | * **All Updates**. Applies all changes.                 |
@@ -71,7 +71,7 @@ Give it a name, optionally a description, and define some basic metadata:
 
 
 Box Sections
-```````````````````````
+````````````
 
 Once you create a box, you can configure and manage it in these sections.
 

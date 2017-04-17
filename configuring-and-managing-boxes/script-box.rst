@@ -1,5 +1,5 @@
 Script Boxes
-********************************
+************
 
 The Script box is the type you most commonly use to define deployments. It accepts commands in Bash, PowerShell, Salt, Ansible, Chef, or Puppet. ElasticBox provides Chef and Puppet public boxes to install and run recipes or manifests locally.
 
@@ -9,7 +9,7 @@ The Script box is the type you most commonly use to define deployments. It accep
 * `Adding child script boxes`_
 
 Creating Your First Script Box
----------------------------------
+------------------------------
 
 On the Boxes page, click **New** > **Script**. Enter a name, optionally a description and other `metadata </../documentation/core-concepts/boxes/#box-metadata>`_. Save to continue. Configure the deployment using `events </../documentation/configuring-and-managing-boxes/start-stop-and-upgrade-boxes/>`_ and `variables </../documentation/configuring-and-managing-boxes/parameterizing-boxes-with-variables/>`_.
 
@@ -20,7 +20,7 @@ Don't find what you need? Then click **Create a new deployment policy box**.
 The easiest way to understand script boxes is to build one. Follow this tutorial to build a simple box that says `Hello World </../documentation/getting-started/hello-world-in-elasticbox/>`_.
 
 Adding Child Script Boxes
------------------------------
+-------------------------
 
 Let's build on top of the `Hello World </../documentation/getting-started/hello-world-in-elasticbox/>`_ box as an example. To set up full-scale application deployments, you need to stitch components or micro components together. You do that by stacking child boxes within a parent. In this example, we'll stack the Hello World box within another box.
 
@@ -45,16 +45,7 @@ Now that Hello World is nested in the Greeting box, we can replace Hello World b
 .. raw:: html
 
     <div class="doc-image padding-1x">
-      <div class="browser-feature">
-        <div class="indicators">
-            <div class="circle magenta"></div>
-            <div class="circle orange"></div>
-            <div class="circle green"></div>
-          </div>
-          <div class="browser-window">
-            <img class="img-responsive" src="/../assets/img/docs/boxes/box-box-variables.png" alt="Select the Box Variable Sub-Variable">
-          </div>
-      </div>
+        <img class="img-responsive" src="/../assets/img/docs/boxes/box-box-variables.png" alt="Select the Box Variable Sub-Variable">
     </div>
 
 Edit this to say hello to someone else.
@@ -72,16 +63,7 @@ Now we overwrote the original value of the GREETING variable from the Hello Worl
 .. raw:: html
 
 	<div class="doc-image padding-1x">
-      <div class="browser-feature">
-        <div class="indicators">
-            <div class="circle magenta"></div>
-            <div class="circle orange"></div>
-            <div class="circle green"></div>
-          </div>
-          <div class="browser-window">
-            <img class="img-responsive" src="/../assets/img/docs/boxes/box-box-variables-2.png" alt="See Value of Sub-Variable Overridden">
-          </div>
-      </div>
+        <img class="img-responsive" src="/../assets/img/docs/boxes/box-box-variables-2.png" alt="See Value of Sub-Variable Overridden">
     </div>
 
 See what we did? We consumed a box configuration and changed deployment values of the child box within the context of the parent. Remember that the original child box definition of Hello World, in this case, is not affected. When you deploy the Greeting box in this example, it also deploys the Hello World box in the same instance.
